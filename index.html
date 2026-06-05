@@ -244,11 +244,117 @@
     tr:last-child td { border-bottom: none; }
     tr:hover td { background: rgba(255,255,255,.02); }
 
-    /* ── Responsive ── */
-    @media (max-width: 800px) {
-      .slide { padding: 30px 18px 60px; }
-      .g3, .g4 { grid-template-columns: 1fr 1fr; }
-      .g2 { grid-template-columns: 1fr; }
+    /* ══════════════════════════════════════
+       RESPONSIVE — Tablet (≤900px)
+    ══════════════════════════════════════ */
+    @media (max-width: 900px) {
+      .slide { padding: 32px 28px 64px; }
+      .g2, .g3, .g4 { grid-template-columns: 1fr 1fr; gap: .7rem; }
+      h1 { font-size: 1.8rem; }
+      h2 { font-size: 1.3rem; }
+      h3 { font-size: .95rem; }
+      .stat-num { font-size: 2rem; }
+    }
+
+    /* ══════════════════════════════════════
+       MOBILE CLASS — added by JS on small screens
+    ══════════════════════════════════════ */
+    .mob-stack {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: .65rem !important;
+      width: 100% !important;
+    }
+    .mob-full { width: 100% !important; max-width: 100% !important; }
+    .mob-hide { display: none !important; }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE — Mobile (≤600px)
+    ══════════════════════════════════════ */
+    @media (max-width: 600px) {
+      body { overflow: hidden; }
+
+      .deck { height: 100dvh; }
+
+      .slide {
+        padding: 52px 14px 68px !important;
+        justify-content: flex-start !important;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        -webkit-overflow-scrolling: touch;
+        align-items: stretch !important;
+        gap: .55rem !important;
+      }
+
+      /* typography */
+      h1 { font-size: clamp(1.3rem, 5.5vw, 1.9rem) !important; line-height: 1.2 !important; }
+      h2 { font-size: clamp(1rem, 4.5vw, 1.35rem) !important; margin-bottom: .6rem !important; }
+      h3 { font-size: .88rem !important; margin-bottom: .3rem !important; }
+      p  { font-size: .78rem !important; line-height: 1.65 !important; }
+      li { font-size: .78rem !important; }
+      .bn-label { font-size: .72rem !important; }
+      .stat-num { font-size: 1.6rem !important; }
+      .tag { font-size: .56rem !important; padding: .2rem .6rem !important; margin-bottom: .5rem !important; }
+
+      /* cards */
+      .card { padding: .6rem .85rem !important; border-radius: 10px !important; }
+
+      /* named grids */
+      .g2, .g3, .g4 { grid-template-columns: 1fr !important; gap: .55rem !important; }
+
+      /* nav */
+      .nav { bottom: 12px; right: 12px; gap: .35rem; }
+      .nav button { width: 46px !important; height: 46px !important; font-size: 1.1rem !important; }
+      .counter { bottom: 18px; left: 12px; font-size: .7rem; }
+
+      /* bar chart */
+      .bar-label { width: 80px !important; font-size: .65rem !important; }
+      .bar-row { gap: .4rem !important; margin-bottom: .45rem !important; }
+      .bar-track { height: 20px !important; }
+
+      /* table */
+      table { font-size: .68rem !important; display: block !important; overflow-x: auto !important; }
+      th, td { padding: .35rem .5rem !important; font-size: .67rem !important; white-space: normal !important; }
+
+      /* SVG */
+      svg { max-width: 100% !important; height: auto !important; }
+
+      /* blockquote */
+      blockquote { padding: .55rem .8rem !important; font-size: .78rem !important; }
+
+      /* pill */
+      .pill { font-size: .6rem !important; padding: .12rem .4rem !important; }
+
+      /* hero */
+      .hero-title-en { font-size: clamp(1.2rem, 6vw, 1.8rem) !important; }
+      .hero-title-bn { font-size: clamp(.85rem, 3.5vw, 1.1rem) !important; }
+
+      /* cycle diagram wrap */
+      .cycle { gap: .3rem !important; }
+      .cycle-box { min-width: 80px !important; font-size: .7rem !important; padding: .4rem .6rem !important; }
+      .cycle-arrow { font-size: 1rem !important; }
+
+      /* fancy list */
+      ul.fancy li { font-size: .78rem !important; padding: .35rem 0 .35rem 1.5rem !important; }
+
+      /* progress thicker */
+      .progress-track { height: 4px; }
+      .flag-strip { height: 4px; }
+
+      /* glow effects — reduce on mobile for perf */
+      .glow-green, .glow-red { box-shadow: none !important; }
+    }
+
+    /* ══════════════════════════════════════
+       RESPONSIVE — Small mobile (≤380px)
+    ══════════════════════════════════════ */
+    @media (max-width: 380px) {
+      .slide { padding: 50px 10px 64px !important; }
+      h1 { font-size: 1.15rem !important; }
+      h2 { font-size: .95rem !important; }
+      h3 { font-size: .82rem !important; }
+      p, li { font-size: .72rem !important; }
+      .stat-num { font-size: 1.4rem !important; }
     }
 
     /* ── Pill badge ── */
@@ -2153,6 +2259,77 @@
   });
 
   progress.style.width = (1 / total * 100) + '%';
+
+  /* ── Mobile responsive: stack all inline grids ── */
+  function applyMobile() {
+    const isMob = window.innerWidth <= 600;
+
+    // 1. All inline-style grid containers inside slides → stack
+    document.querySelectorAll('.slide [style]').forEach(el => {
+      const s = el.getAttribute('style') || '';
+      const isGrid = s.includes('grid-template-columns') ||
+                     (s.includes('display:grid') || s.includes('display: grid'));
+      if (isGrid) {
+        if (isMob) {
+          el.classList.add('mob-stack');
+        } else {
+          el.classList.remove('mob-stack');
+        }
+      }
+      // max-width → full width on mobile
+      if (s.includes('max-width') && isMob) {
+        el.classList.add('mob-full');
+      } else {
+        el.classList.remove('mob-full');
+      }
+    });
+
+    // 2. Hide decorative large absolute blobs
+    document.querySelectorAll('.slide [style*="position:absolute"], .slide [style*="position: absolute"]').forEach(el => {
+      const s = el.getAttribute('style') || '';
+      const w = parseInt((s.match(/width:\s*(\d+)px/) || [])[1] || 0);
+      if (w >= 300) {
+        isMob ? el.classList.add('mob-hide') : el.classList.remove('mob-hide');
+      }
+    });
+
+    // 3. Inline font-size overrides — scale down proportionally
+    if (isMob) {
+      document.querySelectorAll('.slide [style*="font-size"]').forEach(el => {
+        const s = el.getAttribute('style') || '';
+        const match = s.match(/font-size:\s*([\d.]+)rem/);
+        if (match) {
+          const orig = parseFloat(match[1]);
+          // scale down anything larger than .95rem
+          if (orig > 0.95) {
+            const scaled = Math.max(0.7, orig * 0.78);
+            el.style.setProperty('font-size', scaled + 'rem', 'important');
+          }
+        }
+        // px font sizes (like inline headings)
+        const pxMatch = s.match(/font-size:\s*([\d.]+)px/);
+        if (pxMatch) {
+          const orig = parseFloat(pxMatch[1]);
+          if (orig > 14) {
+            const scaled = Math.max(12, orig * 0.72);
+            el.style.setProperty('font-size', scaled + 'px', 'important');
+          }
+        }
+      });
+
+      // 4. Inline padding — reduce on mobile
+      document.querySelectorAll('.slide [style*="padding"]').forEach(el => {
+        // only touch elements with large padding values
+        const s = el.getAttribute('style') || '';
+        if (s.includes('padding:') || s.includes('padding ')) {
+          el.style.setProperty('padding', '.5rem .7rem', 'important');
+        }
+      });
+    }
+  }
+
+  applyMobile();
+  window.addEventListener('resize', applyMobile);
 </script>
 </body>
 </html>
