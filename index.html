@@ -644,438 +644,846 @@
 </div>
 
 <!-- ══════════════════════════════════════════════════════
-     SLIDE 4 — KEY STATS with SVG Line Chart
+     SLIDE 4 — KEY STATS (design v4 — theme-matched)
 ══════════════════════════════════════════════════════ -->
-<div class="slide">
-  <div class="sec-header">
-    <div class="tag">Statistics | পরিসংখ্যান</div>
-    <h2>Bangladesh Inflation — Key Numbers <span class="bn-sub" style="display:block;">মূল পরিসংখ্যান</span></h2>
-  </div>
-  <div class="grid g4" style="max-width:1020px; margin-bottom:1.2rem;">
-    <div class="card" style="text-align:center;">
-      <div class="stat-num">9.5%</div>
-      <div style="font-size:.75rem; color:var(--muted); margin-top:.3rem;">Avg CPI FY 2023–24<br><span class="bn">গড় সিপিআই</span></div>
-    </div>
-    <div class="card red-accent" style="text-align:center;">
-      <div class="stat-num" style="color:var(--red);">11.2%</div>
-      <div style="font-size:.75rem; color:var(--muted); margin-top:.3rem;">Food Inflation Peak<br><span class="bn">খাদ্য মুদ্রাস্ফীতি (Oct 2023)</span></div>
-    </div>
-    <div class="card blue-accent" style="text-align:center;">
-      <div class="stat-num" style="color:var(--accent);">6.5%</div>
-      <div style="font-size:.75rem; color:var(--muted); margin-top:.3rem;">BB Target Rate<br><span class="bn">বাংলাদেশ ব্যাংকের লক্ষ্যমাত্রা</span></div>
-    </div>
-    <div class="card" style="text-align:center;">
-      <div class="stat-num" style="color:#4dd6a0;">6.0%</div>
-      <div style="font-size:.75rem; color:var(--muted); margin-top:.3rem;">GDP Growth FY24<br><span class="bn">জিডিপি প্রবৃদ্ধি</span></div>
+<div class="slide" style="padding:36px 56px 44px; justify-content:flex-start;">
+
+  <!-- header -->
+  <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.8rem;width:100%;max-width:1100px;">
+    <div class="tag" style="margin-bottom:0;">Statistics | পরিসংখ্যান</div>
+    <div style="flex:1;">
+      <h2 style="font-size:1.4rem;margin-bottom:0;">Bangladesh Inflation — Key Numbers</h2>
+      <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.75rem;color:var(--muted);">মূল পরিসংখ্যান · Source: Bangladesh Bank &amp; BBS, 2024</p>
     </div>
   </div>
 
-  <!-- SVG Line Chart -->
-  <div class="card" style="max-width:820px; width:100%; padding:1.2rem 1.4rem;">
-    <h3 style="margin-bottom:.3rem;">CPI Inflation Trend 2019–2024 <span class="bn-label" style="display:inline; font-size:.75rem;">মুদ্রাস্ফীতির প্রবণতা</span></h3>
-    <svg viewBox="0 0 700 160" style="width:100%; overflow:visible;">
-      <defs>
-        <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#f42a41" stop-opacity=".35"/>
-          <stop offset="100%" stop-color="#f42a41" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <!-- Grid lines -->
-      <line x1="40" y1="20" x2="670" y2="20" stroke="#1a2230" stroke-width="1"/>
-      <line x1="40" y1="60" x2="670" y2="60" stroke="#1a2230" stroke-width="1"/>
-      <line x1="40" y1="100" x2="670" y2="100" stroke="#1a2230" stroke-width="1"/>
-      <line x1="40" y1="140" x2="670" y2="140" stroke="#1a2230" stroke-width="1"/>
-      <!-- Y labels -->
-      <text x="32" y="24" fill="#7a8fa6" font-size="9" text-anchor="end">11%</text>
-      <text x="32" y="64" fill="#7a8fa6" font-size="9" text-anchor="end">8%</text>
-      <text x="32" y="104" fill="#7a8fa6" font-size="9" text-anchor="end">6%</text>
-      <text x="32" y="144" fill="#7a8fa6" font-size="9" text-anchor="end">4%</text>
-      <!-- Target line -->
-      <line x1="40" y1="90" x2="670" y2="90" stroke="#4da6ff" stroke-width="1" stroke-dasharray="5 3"/>
-      <text x="672" y="93" fill="#4da6ff" font-size="8">Target 6.5%</text>
-      <!-- Data points: years 2019-20, 20-21, 21-22, 22-23, 23-24, 24(est) -->
-      <!-- Inflation: 5.65, 5.56, 6.15, 9.02, 9.47, 8.8(est) -->
-      <!-- Y: 11%=20, 4%=140, so scale: (11-val)/7*120+20 -->
-      <!-- 5.65 → (11-5.65)/7*120+20 = 5.35/7*120+20 = 91.7+20 ≈ 112 -->
-      <!-- 5.56 → 92.7+20 ≈ 113 -->
-      <!-- 6.15 → 87.8+20 ≈ 108 -->
-      <!-- 9.02 → 32.7+20 ≈ 53 -->
-      <!-- 9.47 → 24.9+20 ≈ 45 -->
-      <!-- 8.8  → 36.6+20 ≈ 57 -->
-      <polygon
-        points="80,112 194,113 308,108 422,53 536,45 650,57 650,140 80,140"
-        fill="url(#lineGrad)"/>
-      <polyline
-        points="80,112 194,113 308,108 422,53 536,45 650,57"
-        fill="none" stroke="#f42a41" stroke-width="2.5" stroke-linejoin="round"/>
-      <!-- Dots -->
-      <circle cx="80"  cy="112" r="5" fill="#f42a41"/>
-      <circle cx="194" cy="113" r="5" fill="#f42a41"/>
-      <circle cx="308" cy="108" r="5" fill="#f5c518"/>
-      <circle cx="422" cy="53"  r="5" fill="#f42a41"/>
-      <circle cx="536" cy="45"  r="5" fill="#f42a41"/>
-      <circle cx="650" cy="57"  r="6" fill="#f42a41" stroke="#fff" stroke-width="1.5"/>
-      <!-- Labels above dots -->
-      <text x="80"  y="101" fill="#bfcfdf" font-size="8.5" text-anchor="middle">5.65%</text>
-      <text x="194" y="102" fill="#bfcfdf" font-size="8.5" text-anchor="middle">5.56%</text>
-      <text x="308" y="97"  fill="#f5c518" font-size="8.5" text-anchor="middle">6.15%</text>
-      <text x="422" y="42"  fill="#f87588" font-size="8.5" text-anchor="middle">9.02%</text>
-      <text x="536" y="34"  fill="#f87588" font-size="8.5" text-anchor="middle">9.47%</text>
-      <text x="650" y="46"  fill="#f87588" font-size="8.5" text-anchor="middle">~8.8%</text>
-      <!-- X labels -->
-      <text x="80"  y="158" fill="#7a8fa6" font-size="8.5" text-anchor="middle">FY19-20</text>
-      <text x="194" y="158" fill="#7a8fa6" font-size="8.5" text-anchor="middle">FY20-21</text>
-      <text x="308" y="158" fill="#7a8fa6" font-size="8.5" text-anchor="middle">FY21-22</text>
-      <text x="422" y="158" fill="#7a8fa6" font-size="8.5" text-anchor="middle">FY22-23</text>
-      <text x="536" y="158" fill="#7a8fa6" font-size="8.5" text-anchor="middle">FY23-24</text>
-      <text x="650" y="158" fill="#7a8fa6" font-size="8.5" text-anchor="middle">FY24-25*</text>
-    </svg>
-    <p style="font-size:.72rem; color:var(--muted); margin-top:.3rem;">*Estimated | উৎস: Bangladesh Bank, BBS</p>
-  </div>
-</div>
+  <!-- main grid -->
+  <div style="display:grid;grid-template-columns:1fr 1px 1.6fr;gap:1.2rem;width:100%;max-width:1100px;flex:1;align-items:stretch;">
 
-<!-- ══════════════════════════════════════════════════════
-     SLIDE 5 — CAUSES OVERVIEW with visual diagram
-══════════════════════════════════════════════════════ -->
-<div class="slide">
-  <div class="sec-header">
-    <div class="tag">Causes | কারণসমূহ</div>
-    <h2>Root Causes of Inflation <span class="bn-sub" style="display:inline; font-size:.7em; color:var(--muted);">মুদ্রাস্ফীতির মূল কারণ</span></h2>
-  </div>
-  <div class="grid g3" style="max-width:1080px; margin-bottom:1.2rem;">
-    <div class="card glow-green">
-      <div class="icon-circle ic-blue">💸</div>
-      <h3>Demand-Pull | চাহিদা-চালিত</h3>
-      <p>Rising consumer demand outpaces supply — too much money chasing too few goods.</p>
-      <p class="bn-label">অতিরিক্ত চাহিদা উৎপাদন সক্ষমতাকে ছাড়িয়ে যায়।</p>
-    </div>
-    <div class="card red-accent glow-red">
-      <div class="icon-circle ic-red">⛽</div>
-      <h3 style="color:var(--red);">Cost-Push | ব্যয়-চালিত</h3>
-      <p>Production cost increases — energy, imports, wages — passed to consumers as higher prices.</p>
-      <p class="bn-label">উৎপাদন খরচ বৃদ্ধি ভোক্তাদের উপর চাপিয়ে দেওয়া হয়।</p>
-    </div>
-    <div class="card gold-accent">
-      <div class="icon-circle ic-gold">🏦</div>
-      <h3>Monetary | মুদ্রানীতি</h3>
-      <p>Excess money supply, weak taka, supply chain disruptions fuel persistent inflation.</p>
-      <p class="bn-label">অতিরিক্ত অর্থ সরবরাহ ও দুর্বল টাকা মুদ্রাস্ফীতি ঘটায়।</p>
-    </div>
-  </div>
+    <!-- LEFT: 4 compact stat cards -->
+    <div style="display:grid;grid-template-rows:repeat(4,1fr);gap:.6rem;">
 
-  <!-- Vicious cycle diagram with SVG arrows -->
-  <div style="background:var(--card); border:1px solid var(--border); border-radius:14px; padding:1rem 1.6rem; max-width:860px; width:100%;">
-    <p style="font-size:.8rem; color:var(--gold); font-weight:700; margin-bottom:.8rem; text-align:center;">INFLATIONARY SPIRAL | মুদ্রাস্ফীতির চক্র</p>
-    <div style="display:flex; align-items:center; justify-content:center; gap:.4rem; flex-wrap:wrap;">
-      <div class="cycle-box" style="border-color:rgba(77,166,255,.3);">Supply Shock<br><span class="bn" style="font-size:.72rem; color:var(--muted);">সরবরাহ ধাক্কা</span></div>
-      <div class="cycle-arrow">→</div>
-      <div class="cycle-box" style="border-color:rgba(244,42,65,.3);">Higher Costs<br><span class="bn" style="font-size:.72rem; color:var(--muted);">উচ্চ ব্যয়</span></div>
-      <div class="cycle-arrow">→</div>
-      <div class="cycle-box" style="border-color:rgba(244,42,65,.4);">Price Rise<br><span class="bn" style="font-size:.72rem; color:var(--muted);">মূল্য বৃদ্ধি</span></div>
-      <div class="cycle-arrow">→</div>
-      <div class="cycle-box" style="border-color:rgba(245,197,24,.3);">Wage Demand<br><span class="bn" style="font-size:.72rem; color:var(--muted);">মজুরির দাবি</span></div>
-      <div class="cycle-arrow">→</div>
-      <div class="cycle-box" style="border-color:rgba(244,42,65,.4);">More Inflation<br><span class="bn" style="font-size:.72rem; color:var(--muted);">আরও মুদ্রাস্ফীতি</span></div>
-      <div class="cycle-arrow" style="color:var(--red);">↺</div>
-    </div>
-  </div>
-</div>
+      <div class="card red-accent" style="padding:.65rem 1rem;">
+        <p style="font-size:.58rem;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.2rem;">Avg CPI · FY 2023–24</p>
+        <div style="display:flex;align-items:baseline;gap:.5rem;">
+          <span style="font-size:1.7rem;font-weight:900;color:var(--red);line-height:1;">9.5%</span>
+          <span class="pill pill-red" style="font-size:.6rem;">▲ +3pp vs target</span>
+        </div>
+        <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.62rem;color:var(--muted);margin-top:.15rem;">গড় ভোক্তা মূল্য সূচক</p>
+      </div>
 
-<!-- ══════════════════════════════════════════════════════
-     SLIDE 6 — DEMAND PULL
-══════════════════════════════════════════════════════ -->
-<div class="slide">
-  <div class="sec-header">
-    <div class="tag tag-gold">Cause 1 | কারণ ১</div>
-    <h2>Demand-Pull Inflation <span class="bn-sub" style="display:inline; font-size:.75em; color:var(--muted);">চাহিদা-চালিত মুদ্রাস্ফীতি</span></h2>
-  </div>
-  <div class="grid g2" style="max-width:1020px; align-items:start;">
-    <ul class="fancy" style="font-size:.9rem;">
-      <li>
-        <span class="en-bn">
-          <strong>Rising Remittances | প্রবাসী আয়</strong>
-          <span class="bn-label">বাংলাদেশ FY24-এ ~$21.9 বিলিয়ন রেমিট্যান্স পেয়েছে — পরিবারের ব্যয় ক্ষমতা বাড়িয়ে চাহিদা সৃষ্টি করেছে।</span>
-        </span>
-      </li>
-      <li>
-        <span class="en-bn">
-          <strong>Mega Infrastructure Spending | বৃহৎ অবকাঠামো ব্যয়</strong>
-          <span class="bn-label">পদ্মা সেতু, মেট্রোরেল, রূপপুর পারমাণবিক বিদ্যুৎ কেন্দ্র — অর্থনীতিতে বিশাল অর্থ প্রবেশ করিয়েছে।</span>
-        </span>
-      </li>
-      <li>
-        <span class="en-bn">
-          <strong>Social Safety Nets | সামাজিক নিরাপত্তা জাল</strong>
-          <span class="bn-label">ক্যাশ ট্রান্সফার ও ভর্তুকি সরবরাহ না বাড়িয়েই ব্যয়যোগ্য আয় বাড়িয়েছে।</span>
-        </span>
-      </li>
-      <li>
-        <span class="en-bn">
-          <strong>Urbanisation &amp; Middle Class | নগরায়ণ ও মধ্যবিত্ত</strong>
-          <span class="bn-label">ক্রমবর্ধমান নগর মধ্যবিত্ত শ্রেণি পণ্য ও সেবার চাহিদা বাড়াচ্ছে।</span>
-        </span>
-      </li>
-      <li>
-        <span class="en-bn">
-          <strong>Post-COVID Pent-up Demand | করোনা-পরবর্তী চাহিদা বিস্ফোরণ</strong>
-          <span class="bn-label">২০২০–২১-এর দমিত ভোগ ব্যয় দ্রুত মুক্তি পেয়ে চাহিদা বৃদ্ধি করেছে।</span>
-        </span>
-      </li>
-    </ul>
-    <div>
-      <div class="card glow-green" style="margin-bottom:.9rem;">
-        <h3>Remittance Inflow (USD Billion) | রেমিট্যান্স প্রবাহ</h3>
-        <div style="margin-top:.6rem;">
-          <div class="bar-row"><div class="bar-label">FY 2020–21</div><div class="bar-track"><div class="bar-fill bar-blue" style="width:95%;">$24.8B</div></div></div>
-          <div class="bar-row"><div class="bar-label">FY 2021–22</div><div class="bar-track"><div class="bar-fill bar-blue" style="width:78%;">$21.0B</div></div></div>
-          <div class="bar-row"><div class="bar-label">FY 2022–23</div><div class="bar-track"><div class="bar-fill bar-blue" style="width:80%;">$21.9B</div></div></div>
-          <div class="bar-row"><div class="bar-label">FY 2023–24</div><div class="bar-track"><div class="bar-fill bar-blue" style="width:88%;">$23.9B</div></div></div>
+      <div class="card red-accent" style="padding:.65rem 1rem;">
+        <p style="font-size:.58rem;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.2rem;">Food Inflation Peak · Oct 2023</p>
+        <div style="display:flex;align-items:baseline;gap:.5rem;">
+          <span style="font-size:1.7rem;font-weight:900;color:#ff4455;line-height:1;">12.56%</span>
+          <span class="pill pill-red" style="font-size:.6rem;">10-yr high</span>
+        </div>
+        <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.62rem;color:var(--muted);margin-top:.15rem;">খাদ্য মুদ্রাস্ফীতি — ১০ বছরের সর্বোচ্চ</p>
+      </div>
+
+      <div class="card blue-accent" style="padding:.65rem 1rem;">
+        <p style="font-size:.58rem;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.2rem;">BB Target · FY24</p>
+        <div style="display:flex;align-items:baseline;gap:.5rem;">
+          <span style="font-size:1.7rem;font-weight:900;color:var(--accent);line-height:1;">6.0%</span>
+          <span style="font-size:.65rem;color:var(--muted);">missed by 3.5pp</span>
+        </div>
+        <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.62rem;color:var(--muted);margin-top:.15rem;">বাংলাদেশ ব্যাংকের মুদ্রাস্ফীতি লক্ষ্যমাত্রা</p>
+      </div>
+
+      <div class="card gold-accent" style="padding:.65rem 1rem;">
+        <p style="font-size:.58rem;font-weight:700;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;margin-bottom:.2rem;">Taka Depreciation · 2022–24</p>
+        <div style="display:flex;align-items:baseline;gap:.5rem;">
+          <span style="font-size:1.7rem;font-weight:900;color:var(--gold);line-height:1;">~30%</span>
+          <span style="font-size:.65rem;color:var(--muted);">vs USD</span>
+        </div>
+        <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.62rem;color:var(--muted);margin-top:.15rem;">টাকার অবমূল্যায়ন — মুদ্রাস্ফীতির কারণ</p>
+      </div>
+
+    </div>
+
+    <!-- DIVIDER -->
+    <div style="background:var(--border);"></div>
+
+    <!-- RIGHT: chart -->
+    <div style="display:flex;flex-direction:column;gap:.5rem;">
+
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <h3 style="color:var(--text);font-size:.85rem;margin-bottom:.05rem;">CPI Inflation Trend — FY 2019–2025</h3>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.65rem;color:var(--muted);">বার্ষিক মুদ্রাস্ফীতির প্রবণতা</p>
+        </div>
+        <div style="display:flex;gap:.8rem;align-items:center;">
+          <span style="display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:var(--muted);">
+            <span style="width:16px;height:2px;background:var(--red);display:inline-block;border-radius:2px;"></span>CPI
+          </span>
+          <span style="display:flex;align-items:center;gap:.3rem;font-size:.62rem;color:var(--accent);">
+            <span style="width:16px;height:0;border-top:2px dashed var(--accent);display:inline-block;"></span>Target
+          </span>
         </div>
       </div>
-      <!-- Donut chart for demand components -->
-      <div class="card">
-        <h3>Demand Drivers <span class="bn" style="font-size:.8rem;">চাহিদার উৎস</span></h3>
-        <div style="display:flex; align-items:center; gap:1rem; margin-top:.5rem;">
-          <svg viewBox="0 0 100 100" width="90" height="90" style="flex-shrink:0;">
-            <!-- Donut slices (rough proportions) -->
-            <!-- Remittance 35%, Govt 28%, SSN 15%, Urban 12%, Other 10% -->
-            <circle cx="50" cy="50" r="35" fill="none" stroke="#4da6ff" stroke-width="18"
-              stroke-dasharray="77 143" stroke-dashoffset="0"/>
-            <circle cx="50" cy="50" r="35" fill="none" stroke="#f5c518" stroke-width="18"
-              stroke-dasharray="62 158" stroke-dashoffset="-77"/>
-            <circle cx="50" cy="50" r="35" fill="none" stroke="#006a4e" stroke-width="18"
-              stroke-dasharray="33 187" stroke-dashoffset="-139"/>
-            <circle cx="50" cy="50" r="35" fill="none" stroke="#f42a41" stroke-width="18"
-              stroke-dasharray="26 194" stroke-dashoffset="-172"/>
-            <circle cx="50" cy="50" r="35" fill="none" stroke="#7a8fa6" stroke-width="18"
-              stroke-dasharray="22 198" stroke-dashoffset="-198"/>
-            <circle cx="50" cy="50" r="24" fill="#131920"/>
-          </svg>
-          <div style="font-size:.75rem; line-height:1.9;">
-            <div><span style="color:#4da6ff;">■</span> Remittance 35%</div>
-            <div><span style="color:#f5c518;">■</span> Govt. Spending 28%</div>
-            <div><span style="color:#006a4e;">■</span> Safety Nets 15%</div>
-            <div><span style="color:#f42a41;">■</span> Urban demand 12%</div>
-            <div><span style="color:#7a8fa6;">■</span> Other 10%</div>
+
+      <div class="card" style="padding:.8rem 1rem;flex:1;">
+        <svg viewBox="0 0 560 175" style="width:100%;height:100%;overflow:visible;">
+          <defs>
+            <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#f42a41" stop-opacity=".22"/>
+              <stop offset="100%" stop-color="#f42a41" stop-opacity=".01"/>
+            </linearGradient>
+          </defs>
+
+          <!-- grid -->
+          <line x1="44" y1="14"  x2="548" y2="14"  stroke="#22303d" stroke-width="1"/>
+          <line x1="44" y1="50"  x2="548" y2="50"  stroke="#22303d" stroke-width="1"/>
+          <line x1="44" y1="86"  x2="548" y2="86"  stroke="#22303d" stroke-width="1"/>
+          <line x1="44" y1="122" x2="548" y2="122" stroke="#22303d" stroke-width="1"/>
+          <line x1="44" y1="152" x2="548" y2="152" stroke="#22303d" stroke-width="1"/>
+
+          <!-- Y labels: 13%=14, 10%=50, 7%=86, 4%=122, 1%=152 → 1%=12px -->
+          <text x="38" y="18"  fill="#7a8fa6" font-size="8.5" text-anchor="end">13%</text>
+          <text x="38" y="54"  fill="#7a8fa6" font-size="8.5" text-anchor="end">10%</text>
+          <text x="38" y="90"  fill="#7a8fa6" font-size="8.5" text-anchor="end">7%</text>
+          <text x="38" y="126" fill="#7a8fa6" font-size="8.5" text-anchor="end">4%</text>
+          <text x="38" y="156" fill="#7a8fa6" font-size="8.5" text-anchor="end">1%</text>
+
+          <!-- BB target 6% → y = 152-(5×12) = 152-60 = 92 -->
+          <line x1="44" y1="92" x2="548" y2="92" stroke="#4da6ff" stroke-width="1.2" stroke-dasharray="5 4"/>
+          <text x="551" y="95" fill="#4da6ff" font-size="7.5">6%</text>
+
+          <!--
+            scale: 1% = 12px, base y=152 at 1%
+            y = 152 - (val-1)*12
+            5.65% → 152-55.8=96.2≈96
+            5.56% → 152-54.7=97.3≈97
+            6.15% → 152-61.8=90.2≈90
+            9.02% → 152-96.2=55.8≈56
+            9.73% → 152-104.8=47.2≈47
+            10.87%→ 152-118.4=33.6≈34
+            x: 80,164,248,332,416,500
+          -->
+          <polygon points="80,96 164,97 248,90 332,56 416,47 500,34 500,152 80,152" fill="url(#areaGrad)"/>
+          <polyline points="80,96 164,97 248,90 332,56 416,47 500,34"
+            fill="none" stroke="#f42a41" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+
+          <!-- dots -->
+          <circle cx="80"  cy="96" r="4" fill="var(--card2)" stroke="#f42a41" stroke-width="2"/>
+          <circle cx="164" cy="97" r="4" fill="var(--card2)" stroke="#f42a41" stroke-width="2"/>
+          <circle cx="248" cy="90" r="4" fill="var(--card2)" stroke="#f5c518" stroke-width="2"/>
+          <circle cx="332" cy="56" r="4" fill="var(--card2)" stroke="#f42a41" stroke-width="2"/>
+          <circle cx="416" cy="47" r="5" fill="#f42a41"      stroke="#fff"    stroke-width="2"/>
+          <circle cx="500" cy="34" r="4" fill="var(--card2)" stroke="#ff8855" stroke-width="2"/>
+
+          <!-- value labels -->
+          <text x="80"  y="85"  fill="#7a8fa6" font-size="8" text-anchor="middle">5.65%</text>
+          <text x="164" y="86"  fill="#7a8fa6" font-size="8" text-anchor="middle">5.56%</text>
+          <text x="248" y="79"  fill="#f5c518" font-size="8" text-anchor="middle">6.15%</text>
+          <text x="332" y="45"  fill="#f87588" font-size="8" text-anchor="middle">9.02%</text>
+          <text x="416" y="36"  fill="#ff3344" font-size="8.5" text-anchor="middle" font-weight="700">9.73%</text>
+          <text x="500" y="23"  fill="#ff8855" font-size="8" text-anchor="middle">10.87%</text>
+
+          <!-- X labels -->
+          <text x="80"  y="167" fill="#7a8fa6" font-size="7.5" text-anchor="middle">FY19-20</text>
+          <text x="164" y="167" fill="#7a8fa6" font-size="7.5" text-anchor="middle">FY20-21</text>
+          <text x="248" y="167" fill="#7a8fa6" font-size="7.5" text-anchor="middle">FY21-22</text>
+          <text x="332" y="167" fill="#7a8fa6" font-size="7.5" text-anchor="middle">FY22-23</text>
+          <text x="416" y="167" fill="#7a8fa6" font-size="7.5" text-anchor="middle">FY23-24</text>
+          <text x="500" y="167" fill="#7a8fa6" font-size="7.5" text-anchor="middle">FY24-25*</text>
+
+          <!-- peak badge -->
+          <rect x="430" y="18" width="68" height="18" rx="4" fill="rgba(244,42,65,.15)" stroke="rgba(244,42,65,.28)" stroke-width="1"/>
+          <text x="464" y="25" fill="#f87588" font-size="7" text-anchor="middle" font-weight="700">▲ SUSTAINED HIGH</text>
+          <text x="464" y="33" fill="#7a8fa6" font-size="6" text-anchor="middle">Jul–Dec 2024</text>
+          <line x1="464" y1="36" x2="497" y2="34" stroke="rgba(244,42,65,.35)" stroke-width="1"/>
+        </svg>
+      </div>
+
+      <p style="font-size:.6rem;color:var(--muted);">*Jul–Dec 2024 avg &nbsp;·&nbsp; Source: Bangladesh Bank, BBS</p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SLIDE 5 — CAUSES OVERVIEW (redesigned)
+══════════════════════════════════════════════════════ -->
+<div class="slide" style="padding:36px 56px 44px; justify-content:flex-start;">
+
+  <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.9rem;width:100%;max-width:1100px;">
+    <div class="tag" style="margin-bottom:0;">Causes | কারণসমূহ</div>
+    <div>
+      <h2 style="font-size:1.45rem;margin-bottom:0;">Root Causes of Inflation in Bangladesh</h2>
+      <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.75rem;color:var(--muted);">বাংলাদেশে মুদ্রাস্ফীতির মূল কারণসমূহ — বৈশ্বিক ও অভ্যন্তরীণ</p>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.85rem;width:100%;max-width:1100px;margin-bottom:.85rem;">
+
+    <!-- Card 1: Global Shocks -->
+    <div class="card red-accent" style="padding:.9rem 1.1rem;">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem;">
+        <span style="font-size:1.4rem;">🌍</span>
+        <h3 style="color:var(--red);margin-bottom:0;font-size:.88rem;">Global Shocks | বৈশ্বিক ধাক্কা</h3>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.4rem;">
+        <div style="background:rgba(244,42,65,.08);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:.35rem .6rem;">
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">🛢️ হরমুজ প্রণালী সংকট</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.65rem;color:var(--muted);margin-top:.1rem;">তেল সরবরাহ বিঘ্ন → বৈশ্বিক জ্বালানি মূল্য ঊর্ধ্বমুখী</p>
+        </div>
+        <div style="background:rgba(244,42,65,.08);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:.35rem .6rem;">
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">🌾 রাশিয়া–ইউক্রেন যুদ্ধ</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.65rem;color:var(--muted);margin-top:.1rem;">গম ও ভোজ্যতেলের মূল্য ৪০–৬০% বৃদ্ধি (২০২২)</p>
+        </div>
+        <div style="background:rgba(244,42,65,.08);border-left:3px solid var(--red);border-radius:0 8px 8px 0;padding:.35rem .6rem;">
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">🦠 কোভিড-১৯ সাপ্লাই চেইন</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.65rem;color:var(--muted);margin-top:.1rem;">কন্টেইনার সংকট → আমদানি খরচ ২০০–৪০০% বৃদ্ধি</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Domestic Energy & Supply -->
+    <div class="card gold-accent" style="padding:.9rem 1.1rem;">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem;">
+        <span style="font-size:1.4rem;">⚡</span>
+        <h3 style="color:var(--gold);margin-bottom:0;font-size:.88rem;">Energy & Supply | জ্বালানি ও সরবরাহ</h3>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.4rem;">
+        <div style="background:rgba(245,197,24,.08);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:.35rem .6rem;">
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">⛽ তেলের সংকট (Aug 2022)</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.65rem;color:var(--muted);margin-top:.1rem;">জ্বালানি তেলের দাম এক রাতে ৪২–৫১% বৃদ্ধি</p>
+        </div>
+        <div style="background:rgba(245,197,24,.08);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:.35rem .6rem;">
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">💡 বিদ্যুৎ সংকট (২০২২–২৪)</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.65rem;color:var(--muted);margin-top:.1rem;">১৪ দফা বিদ্যুতের দাম বৃদ্ধি → উৎপাদন খরচ বৃদ্ধি</p>
+        </div>
+        <div style="background:rgba(245,197,24,.08);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:.35rem .6rem;">
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">📦 আমদানি নির্ভরতা</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.65rem;color:var(--muted);margin-top:.1rem;">গম ৪০%, তেল ৯০%, সার ৮০% আমদানি নির্ভর</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Monetary & Structural -->
+    <div class="card blue-accent" style="padding:.9rem 1.1rem;">
+      <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem;">
+        <span style="font-size:1.4rem;">🏦</span>
+        <h3 style="color:var(--accent);margin-bottom:0;font-size:.88rem;">Monetary | মুদ্রানৈতিক কারণ</h3>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.4rem;">
+        <div style="background:rgba(77,166,255,.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:.35rem .6rem;">
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">💵 টাকার অবমূল্যায়ন</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.65rem;color:var(--muted);margin-top:.1rem;">৳৮৬ → ৳১১৭/USD (২০২১–২০২৪), ৩০%+ পতন</p>
+        </div>
+        <div style="background:rgba(77,166,255,.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:.35rem .6rem;">
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">💸 অতিরিক্ত অর্থ সরবরাহ</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.65rem;color:var(--muted);margin-top:.1rem;">কোভিডকালীন প্রণোদনা → মানি সাপ্লাই দ্রুত বৃদ্ধি</p>
+        </div>
+        <div style="background:rgba(77,166,255,.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:.35rem .6rem;">
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">📈 উচ্চ রেমিট্যান্স প্রবাহ</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.65rem;color:var(--muted);margin-top:.1rem;">FY24-এ $২৩.৯ বিলিয়ন → চাহিদা বৃদ্ধি</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Inflation by sector — real data highlight bar -->
+  <div class="card" style="width:100%;max-width:1100px;padding:.85rem 1.2rem;">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.7rem;">
+      <p style="font-size:.78rem;font-weight:700;color:var(--gold);">Sector-wise Inflation Snapshot — Bangladesh (2023–24) | খাতভিত্তিক মুদ্রাস্ফীতি</p>
+      <p style="font-size:.62rem;color:var(--muted);">Source: BBS, Bangladesh Bank</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(6,1fr);gap:.6rem;">
+      <div style="text-align:center;">
+        <p style="font-size:.65rem;color:var(--muted);margin-bottom:.3rem;">খাদ্য</p>
+        <div style="height:60px;background:var(--card2);border-radius:6px;display:flex;align-items:flex-end;overflow:hidden;">
+          <div style="width:100%;height:89%;background:linear-gradient(180deg,#f42a41,#8b0000);border-radius:6px 6px 0 0;"></div>
+        </div>
+        <p style="font-size:.72rem;font-weight:700;color:#f42a41;margin-top:.3rem;">12.56%</p>
+      </div>
+      <div style="text-align:center;">
+        <p style="font-size:.65rem;color:var(--muted);margin-bottom:.3rem;">সবজি</p>
+        <div style="height:60px;background:var(--card2);border-radius:6px;display:flex;align-items:flex-end;overflow:hidden;">
+          <div style="width:100%;height:95%;background:linear-gradient(180deg,#ff2200,#6b0000);border-radius:6px 6px 0 0;"></div>
+        </div>
+        <p style="font-size:.72rem;font-weight:700;color:#ff4422;margin-top:.3rem;">~15–20%</p>
+      </div>
+      <div style="text-align:center;">
+        <p style="font-size:.65rem;color:var(--muted);margin-bottom:.3rem;">জ্বালানি</p>
+        <div style="height:60px;background:var(--card2);border-radius:6px;display:flex;align-items:flex-end;overflow:hidden;">
+          <div style="width:100%;height:100%;background:linear-gradient(180deg,#f5c518,#8b6914);border-radius:6px 6px 0 0;"></div>
+        </div>
+        <p style="font-size:.72rem;font-weight:700;color:var(--gold);margin-top:.3rem;">42–51%</p>
+      </div>
+      <div style="text-align:center;">
+        <p style="font-size:.65rem;color:var(--muted);margin-bottom:.3rem;">কৃষি উপকরণ</p>
+        <div style="height:60px;background:var(--card2);border-radius:6px;display:flex;align-items:flex-end;overflow:hidden;">
+          <div style="width:100%;height:60%;background:linear-gradient(180deg,#f5a623,#a06010);border-radius:6px 6px 0 0;"></div>
+        </div>
+        <p style="font-size:.72rem;font-weight:700;color:#f5a623;margin-top:.3rem;">~9–11%</p>
+      </div>
+      <div style="text-align:center;">
+        <p style="font-size:.65rem;color:var(--muted);margin-bottom:.3rem;">কাগজ/স্টেশনারি</p>
+        <div style="height:60px;background:var(--card2);border-radius:6px;display:flex;align-items:flex-end;overflow:hidden;">
+          <div style="width:100%;height:50%;background:linear-gradient(180deg,#4da6ff,#1158a7);border-radius:6px 6px 0 0;"></div>
+        </div>
+        <p style="font-size:.72rem;font-weight:700;color:var(--accent);margin-top:.3rem;">~8–12%</p>
+      </div>
+      <div style="text-align:center;">
+        <p style="font-size:.65rem;color:var(--muted);margin-bottom:.3rem;">সার্বিক CPI</p>
+        <div style="height:60px;background:var(--card2);border-radius:6px;display:flex;align-items:flex-end;overflow:hidden;">
+          <div style="width:100%;height:68%;background:linear-gradient(180deg,#4dd6a0,#006a4e);border-radius:6px 6px 0 0;"></div>
+        </div>
+        <p style="font-size:.72rem;font-weight:700;color:#4dd6a0;margin-top:.3rem;">9.73%</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SLIDE 6 — DEMAND PULL (redesigned)
+══════════════════════════════════════════════════════ -->
+<div class="slide" style="padding:28px 52px 36px; justify-content:flex-start;">
+
+  <!-- header -->
+  <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.75rem;width:100%;max-width:1100px;">
+    <div class="tag tag-gold" style="margin-bottom:0;font-size:.6rem;">Cause 1 | কারণ ১</div>
+    <div>
+      <h2 style="font-size:1.3rem;margin-bottom:0;">Demand-Pull Inflation</h2>
+      <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.7rem;color:var(--muted);">চাহিদা-চালিত মুদ্রাস্ফীতি — "Too much money chasing too few goods"</p>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:.9rem;width:100%;max-width:1100px;align-items:start;">
+
+    <!-- LEFT: 5 cause rows, compact -->
+    <div style="display:flex;flex-direction:column;gap:.45rem;">
+
+      <div class="card" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.15rem;flex-shrink:0;">💸</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">Remittance Surge | প্রবাসী আয় বৃদ্ধি</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">FY24-এ <strong style="color:var(--accent);">$23.9B</strong> রেমিট্যান্স → ক্রয়ক্ষমতা বৃদ্ধি → ভোগব্যয় ঊর্ধ্বমুখী</p>
+        </div>
+      </div>
+
+      <div class="card" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.15rem;flex-shrink:0;">🏗️</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">Mega Projects | মেগা প্রকল্প ব্যয়</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">পদ্মা সেতু ($৩.৯B), মেট্রোরেল, রূপপুর → বাজারে অতিরিক্ত অর্থ প্রবেশ</p>
+        </div>
+      </div>
+
+      <div class="card" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.15rem;flex-shrink:0;">🦠</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">Post-COVID Demand | করোনা-পরবর্তী চাহিদা বিস্ফোরণ</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">২০২১–২২-এ দমিত চাহিদার বিস্ফোরণ — সরবরাহ না বেড়ে চাহিদা বৃদ্ধি</p>
+        </div>
+      </div>
+
+      <div class="card" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.15rem;flex-shrink:0;">🏙️</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">Urbanisation | নগরায়ণ ও মধ্যবিত্ত বিস্তার</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">শহরমুখী জনগোষ্ঠী খাদ্য, পোশাক, পরিবহনে ব্যয় বাড়াচ্ছে (৩৮M+ নগরবাসী)</p>
+        </div>
+      </div>
+
+      <div class="card" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.15rem;flex-shrink:0;">🛡️</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">Social Safety Net | সামাজিক সুরক্ষা ব্যয়</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">১৩M+ সুবিধাভোগী — সরবরাহ না বাড়িয়ে ব্যয়যোগ্য আয় বৃদ্ধি</p>
+        </div>
+      </div>
+
+      <!-- insight bar -->
+      <div style="background:rgba(245,197,24,.07);border:1px solid rgba(245,197,24,.2);border-radius:10px;padding:.5rem .85rem;display:flex;gap:.6rem;align-items:center;">
+        <span style="font-size:1rem;">💡</span>
+        <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.67rem;color:var(--muted);line-height:1.55;">চাহিদা বৃদ্ধির বিপরীতে উৎপাদন না বাড়লে মূল্যস্ফীতি অনিবার্য — বাংলাদেশে ঠিক এটাই ঘটেছে।</p>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: bar chart + 4 stat mini cards -->
+    <div style="display:flex;flex-direction:column;gap:.55rem;">
+
+      <div class="card" style="padding:.75rem 1rem;">
+        <h3 style="font-size:.78rem;margin-bottom:.5rem;color:var(--text);">Remittance Inflow (USD Billion) | রেমিট্যান্স প্রবাহ</h3>
+        <div class="bar-row" style="margin-bottom:.45rem;"><div class="bar-label" style="width:100px;font-size:.7rem;">FY 2020–21</div><div class="bar-track" style="height:20px;"><div class="bar-fill bar-blue" style="width:95%;font-size:.65rem;">$24.8B</div></div></div>
+        <div class="bar-row" style="margin-bottom:.45rem;"><div class="bar-label" style="width:100px;font-size:.7rem;">FY 2021–22</div><div class="bar-track" style="height:20px;"><div class="bar-fill bar-blue" style="width:79%;font-size:.65rem;">$21.0B</div></div></div>
+        <div class="bar-row" style="margin-bottom:.45rem;"><div class="bar-label" style="width:100px;font-size:.7rem;">FY 2022–23</div><div class="bar-track" style="height:20px;"><div class="bar-fill bar-blue" style="width:82%;font-size:.65rem;">$21.9B</div></div></div>
+        <div class="bar-row" style="margin-bottom:0;"><div class="bar-label" style="width:100px;font-size:.7rem;">FY 2023–24</div><div class="bar-track" style="height:20px;"><div class="bar-fill bar-blue" style="width:90%;font-size:.65rem;">$23.9B ▲</div></div></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;">
+        <div class="card red-accent" style="padding:.55rem .8rem;text-align:center;">
+          <p style="font-size:1.3rem;font-weight:900;color:var(--red);line-height:1;">28%</p>
+          <p style="font-size:.6rem;color:var(--muted);margin-top:.2rem;">Private consumption growth</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.58rem;color:var(--muted);">বেসরকারি ভোগব্যয় বৃদ্ধি FY23</p>
+        </div>
+        <div class="card gold-accent" style="padding:.55rem .8rem;text-align:center;">
+          <p style="font-size:1.3rem;font-weight:900;color:var(--gold);line-height:1;">$3.9B</p>
+          <p style="font-size:.6rem;color:var(--muted);margin-top:.2rem;">Padma Bridge cost</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.58rem;color:var(--muted);">পদ্মা সেতু মোট ব্যয়</p>
+        </div>
+        <div class="card" style="padding:.55rem .8rem;text-align:center;">
+          <p style="font-size:1.3rem;font-weight:900;color:#4dd6a0;line-height:1;">38M+</p>
+          <p style="font-size:.6rem;color:var(--muted);margin-top:.2rem;">Urban population (2024)</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.58rem;color:var(--muted);">নগর জনসংখ্যা</p>
+        </div>
+        <div class="card blue-accent" style="padding:.55rem .8rem;text-align:center;">
+          <p style="font-size:1.3rem;font-weight:900;color:var(--accent);line-height:1;">13M+</p>
+          <p style="font-size:.6rem;color:var(--muted);margin-top:.2rem;">Safety net beneficiaries</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.58rem;color:var(--muted);">সামাজিক সুরক্ষা সুবিধাভোগী</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SLIDE 7 — COST PUSH (redesigned)
+══════════════════════════════════════════════════════ -->
+<div class="slide" style="padding:28px 52px 36px; justify-content:flex-start;">
+
+  <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.75rem;width:100%;max-width:1100px;">
+    <div class="tag tag-red" style="margin-bottom:0;font-size:.6rem;">Cause 2 | কারণ ২</div>
+    <div>
+      <h2 style="font-size:1.3rem;margin-bottom:0;">Cost-Push Inflation</h2>
+      <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.7rem;color:var(--muted);">ব্যয়-চালিত মুদ্রাস্ফীতি — উৎপাদন খরচ বৃদ্ধি → মূল্যবৃদ্ধি</p>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:.9rem;width:100%;max-width:1100px;align-items:start;">
+
+    <!-- LEFT: 6 cause rows -->
+    <div style="display:flex;flex-direction:column;gap:.45rem;">
+
+      <div class="card red-accent" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.15rem;flex-shrink:0;">⛽</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">তেলের সংকট — Aug 2022 | Fuel Price Shock</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">ডিজেল <strong style="color:var(--red);">৳৮০→৳১১৪/L (+42%)</strong>, কেরোসিন +51% — এক রাতে এক ঘোষণায়</p>
+        </div>
+      </div>
+
+      <div class="card red-accent" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.15rem;flex-shrink:0;">💡</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">বিদ্যুৎ সংকট | Electricity Crisis (2022–24)</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">১৪ দফা বিদ্যুৎ মূল্যবৃদ্ধি — শিল্প উৎপাদন খরচ সরাসরি বৃদ্ধি → মূল্য বৃদ্ধি</p>
+        </div>
+      </div>
+
+      <div class="card" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.15rem;flex-shrink:0;">🛢️</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">হরমুজ প্রণালী + লোহিত সাগর সংকট</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">Houthi আক্রমণ → জাহাজ চলাচল বিঘ্ন → freight cost <strong style="color:var(--gold);">200–400%</strong> বৃদ্ধি (2024)</p>
+        </div>
+      </div>
+
+      <div class="card" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.15rem;flex-shrink:0;">🌾</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">রাশিয়া–ইউক্রেন যুদ্ধ | Food Supply Shock</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">গম আমদানি ব্যয় <strong style="color:var(--gold);">40–60%</strong> বৃদ্ধি — বাংলাদেশ ~৪০% গম আমদানি করে</p>
+        </div>
+      </div>
+
+      <div class="card gold-accent" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.15rem;flex-shrink:0;">👷</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">মজুরি বৃদ্ধি | RMG Wage Hike (2023)</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">পোশাক শিল্পে ন্যূনতম মজুরি <strong style="color:var(--gold);">৳৮,০০০ → ৳১২,৫০০</strong> (+56%) → উৎপাদন খরচ বৃদ্ধি</p>
+        </div>
+      </div>
+
+      <div class="card" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.15rem;flex-shrink:0;">🌊</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">জলবায়ু আঘাত | Climate Shocks</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">ঘূর্ণিঝড় মোখা (2023), বন্যা, খরা → সবজি ও শস্যের উৎপাদন হ্রাস → মূল্য ঊর্ধ্বমুখী</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: price impact visual + real data -->
+    <div style="display:flex;flex-direction:column;gap:.55rem;">
+
+      <!-- price hike table -->
+      <div class="card" style="padding:.75rem 1rem;">
+        <h3 style="font-size:.78rem;margin-bottom:.6rem;color:var(--text);">Real Price Increases — Bangladesh | প্রকৃত মূল্যবৃদ্ধি</h3>
+        <div style="display:flex;flex-direction:column;gap:.35rem;">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:.3rem .5rem;background:rgba(244,42,65,.08);border-radius:7px;border-left:3px solid var(--red);">
+            <span style="font-size:.7rem;color:var(--text);">⛽ ডিজেল (Aug 2022)</span>
+            <span style="font-size:.75rem;font-weight:800;color:var(--red);">+42%</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:.3rem .5rem;background:rgba(244,42,65,.08);border-radius:7px;border-left:3px solid var(--red);">
+            <span style="font-size:.7rem;color:var(--text);">💡 বিদ্যুৎ (2022–24 avg)</span>
+            <span style="font-size:.75rem;font-weight:800;color:var(--red);">+75%</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:.3rem .5rem;background:rgba(245,197,24,.08);border-radius:7px;border-left:3px solid var(--gold);">
+            <span style="font-size:.7rem;color:var(--text);">🌾 গমের আটা (2022–23)</span>
+            <span style="font-size:.75rem;font-weight:800;color:var(--gold);">+55%</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:.3rem .5rem;background:rgba(245,197,24,.08);border-radius:7px;border-left:3px solid var(--gold);">
+            <span style="font-size:.7rem;color:var(--text);">🛢️ ভোজ্যতেল (2022)</span>
+            <span style="font-size:.75rem;font-weight:800;color:var(--gold);">+60%</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:.3rem .5rem;background:rgba(77,166,255,.08);border-radius:7px;border-left:3px solid var(--accent);">
+            <span style="font-size:.7rem;color:var(--text);">🧅 পেঁয়াজ (peak 2023)</span>
+            <span style="font-size:.75rem;font-weight:800;color:var(--accent);">+250%</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:.3rem .5rem;background:rgba(77,214,160,.08);border-radius:7px;border-left:3px solid #4dd6a0;">
+            <span style="font-size:.7rem;color:var(--text);">📦 Container freight (2021)</span>
+            <span style="font-size:.75rem;font-weight:800;color:#4dd6a0;">+400%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- taka depreciation mini stat -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;">
+        <div class="card red-accent" style="padding:.55rem .8rem;text-align:center;">
+          <p style="font-size:.6rem;color:var(--muted);margin-bottom:.2rem;">BDT/USD (2021)</p>
+          <p style="font-size:1.4rem;font-weight:900;color:#4dd6a0;line-height:1;">৳86</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.58rem;color:var(--muted);">আগের মান</p>
+        </div>
+        <div class="card red-accent" style="padding:.55rem .8rem;text-align:center;">
+          <p style="font-size:.6rem;color:var(--muted);margin-bottom:.2rem;">BDT/USD (2024)</p>
+          <p style="font-size:1.4rem;font-weight:900;color:var(--red);line-height:1;">৳117</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.58rem;color:var(--muted);">বর্তমান মান ▼30%</p>
+        </div>
+      </div>
+
+      <!-- insight -->
+      <div style="background:rgba(244,42,65,.07);border:1px solid rgba(244,42,65,.2);border-radius:10px;padding:.5rem .85rem;display:flex;gap:.6rem;align-items:center;">
+        <span style="font-size:1rem;">⚠️</span>
+        <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.67rem;color:var(--muted);line-height:1.55;">বাংলাদেশে জ্বালানি ও আমদানি নির্ভরতা অত্যধিক — বৈশ্বিক মূল্যবৃদ্ধি সরাসরি দেশীয় মূল্যে প্রতিফলিত হয়।</p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SLIDE 8 — MONETARY / STRUCTURAL (redesigned)
+══════════════════════════════════════════════════════ -->
+<div class="slide" style="padding:28px 52px 36px; justify-content:flex-start;">
+
+  <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.75rem;width:100%;max-width:1100px;">
+    <div class="tag" style="margin-bottom:0;font-size:.6rem;">Cause 3 | কারণ ৩</div>
+    <div>
+      <h2 style="font-size:1.3rem;margin-bottom:0;">Monetary &amp; Structural Factors</h2>
+      <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.7rem;color:var(--muted);">মুদ্রানীতি ও কাঠামোগত কারণ — বাজার সিন্ডিকেট, সাপ্লাই চেইন, অর্থ সরবরাহ</p>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:.9rem;width:100%;max-width:1100px;align-items:start;">
+
+    <!-- LEFT: 6 structural causes -->
+    <div style="display:flex;flex-direction:column;gap:.45rem;">
+
+      <div class="card blue-accent" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.15rem;flex-shrink:0;">💵</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">অতিরিক্ত অর্থ সরবরাহ | Excess Money Supply</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">M2 প্রবৃদ্ধি <strong style="color:var(--accent);">~১১%</strong> বনাম GDP প্রবৃদ্ধি ~৬% — Quantity Theory of Money অনুযায়ী মূল্যবৃদ্ধি অনিবার্য</p>
+        </div>
+      </div>
+
+      <div class="card blue-accent" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.15rem;flex-shrink:0;">🏦</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">৯% সুদ সীমা | Capped Lending Rate (2020–23)</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">সস্তা ঋণে কৃত্রিম চাহিদা বৃদ্ধি — ২০২৩-এ প্রত্যাহার, policy rate এখন <strong style="color:var(--accent);">8.5%</strong></p>
+        </div>
+      </div>
+
+      <div class="card" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.15rem;flex-shrink:0;">🖨️</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">ঘাটতি অর্থায়ন | Deficit Financing</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">কোভিড প্রণোদনায় টাকা ছাপানো → FY21-এ বাজেট ঘাটতি GDP-র <strong style="color:var(--gold);">6.1%</strong></p>
+        </div>
+      </div>
+
+      <div class="card red-accent" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.15rem;flex-shrink:0;">🤝</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">বাজার সিন্ডিকেট | Market Syndication</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">পেঁয়াজ, চাল, ভোজ্যতেলে কৃত্রিম সংকট — ২০২৩-এ পেঁয়াজ <strong style="color:var(--red);">৳৩০→৳২৫০/kg</strong></p>
+        </div>
+      </div>
+
+      <div class="card" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.15rem;flex-shrink:0;">🔗</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">সাপ্লাই চেইন অদক্ষতা | Supply Chain Inefficiency</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">কৃষক → ভোক্তা পর্যন্ত ৫–৭ মধ্যস্বত্বভোগী → দাম <strong style="color:var(--gold);">৩০–৫০%</strong> বেশি</p>
+        </div>
+      </div>
+
+      <div class="card" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.15rem;flex-shrink:0;">📜</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">দুর্বল প্রতিযোগিতা নীতি | Weak Competition Law</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">অ্যান্টি-ট্রাস্ট আইনের দুর্বল প্রয়োগ → কার্টেল ও একচেটিয়া মূল্য নির্ধারণ অব্যাহত</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: M2 bar + supply chain SVG -->
+    <div style="display:flex;flex-direction:column;gap:.55rem;">
+
+      <!-- M2 vs CPI vs GDP bars -->
+      <div class="card" style="padding:.75rem 1rem;">
+        <h3 style="font-size:.78rem;margin-bottom:.55rem;color:var(--text);">M2 vs CPI vs GDP — FY 2023–24 | তুলনামূলক চিত্র</h3>
+        <div class="bar-row" style="margin-bottom:.45rem;"><div class="bar-label" style="width:110px;font-size:.7rem;">M2 Money Growth</div><div class="bar-track" style="height:20px;"><div class="bar-fill bar-blue" style="width:100%;font-size:.65rem;">~11%</div></div></div>
+        <div class="bar-row" style="margin-bottom:.45rem;"><div class="bar-label" style="width:110px;font-size:.7rem;">CPI Inflation</div><div class="bar-track" style="height:20px;"><div class="bar-fill bar-red" style="width:86%;font-size:.65rem;">9.73%</div></div></div>
+        <div class="bar-row" style="margin-bottom:0;"><div class="bar-label" style="width:110px;font-size:.7rem;">GDP Growth</div><div class="bar-track" style="height:20px;"><div class="bar-fill bar-green" style="width:55%;font-size:.65rem;">~6.0%</div></div></div>
+        <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.63rem;color:var(--muted);margin-top:.55rem;line-height:1.5;">অর্থ সরবরাহ উৎপাদনের চেয়ে দ্রুত বাড়লে মূল্যবৃদ্ধি অনিবার্য।</p>
+      </div>
+
+      <!-- supply chain SVG improved -->
+      <div class="card" style="padding:.75rem 1rem;">
+        <h3 style="font-size:.78rem;margin-bottom:.6rem;color:var(--text);">Supply Chain Markup | কৃষক থেকে ভোক্তা</h3>
+        <svg viewBox="0 0 340 72" style="width:100%;">
+          <!-- farmer -->
+          <rect x="2" y="20" width="56" height="30" rx="7" fill="#006a4e"/>
+          <text x="30" y="35" fill="#fff" font-size="8" text-anchor="middle" font-weight="700">Farmer</text>
+          <text x="30" y="46" fill="#a0ffd0" font-size="6.5" text-anchor="middle" font-family="Noto Sans Bengali">কৃষক</text>
+          <text x="30" y="60" fill="#4dd6a0" font-size="7.5" text-anchor="middle" font-weight="700">৳10</text>
+          <!-- arrow -->
+          <text x="68" y="37" fill="var(--gold)" font-size="12">→</text>
+          <!-- middlemen -->
+          <rect x="80" y="20" width="58" height="30" rx="7" fill="#1a2230" stroke="#22303d" stroke-width="1"/>
+          <text x="109" y="35" fill="#bfcfdf" font-size="7.5" text-anchor="middle">Middlemen</text>
+          <text x="109" y="46" fill="#7a8fa6" font-size="6" text-anchor="middle" font-family="Noto Sans Bengali">মধ্যস্বত্বভোগী</text>
+          <text x="109" y="60" fill="var(--gold)" font-size="7.5" text-anchor="middle" font-weight="700">৳16</text>
+          <!-- arrow -->
+          <text x="147" y="37" fill="var(--gold)" font-size="12">→</text>
+          <!-- wholesale -->
+          <rect x="159" y="20" width="56" height="30" rx="7" fill="#1a2230" stroke="#22303d" stroke-width="1"/>
+          <text x="187" y="35" fill="#bfcfdf" font-size="7.5" text-anchor="middle">Wholesale</text>
+          <text x="187" y="46" fill="#7a8fa6" font-size="6" text-anchor="middle" font-family="Noto Sans Bengali">পাইকার</text>
+          <text x="187" y="60" fill="var(--gold)" font-size="7.5" text-anchor="middle" font-weight="700">৳22</text>
+          <!-- arrow -->
+          <text x="224" y="37" fill="var(--gold)" font-size="12">→</text>
+          <!-- retail -->
+          <rect x="236" y="20" width="50" height="30" rx="7" fill="#1a2230" stroke="#22303d" stroke-width="1"/>
+          <text x="261" y="35" fill="#bfcfdf" font-size="7.5" text-anchor="middle">Retail</text>
+          <text x="261" y="46" fill="#7a8fa6" font-size="6" text-anchor="middle" font-family="Noto Sans Bengali">খুচরা</text>
+          <text x="261" y="60" fill="var(--gold)" font-size="7.5" text-anchor="middle" font-weight="700">৳30</text>
+          <!-- arrow -->
+          <text x="294" y="37" fill="var(--red)" font-size="12">→</text>
+          <!-- consumer -->
+          <rect x="306" y="16" width="34" height="38" rx="7" fill="#c62535"/>
+          <text x="323" y="34" fill="#fff" font-size="7.5" text-anchor="middle" font-weight="700">Con-</text>
+          <text x="323" y="43" fill="#fff" font-size="7.5" text-anchor="middle" font-weight="700">sumer</text>
+          <text x="323" y="60" fill="#ffaaaa" font-size="7.5" text-anchor="middle" font-weight="700">৳30+</text>
+          <!-- top label -->
+          <text x="171" y="12" fill="var(--red)" font-size="7.5" text-anchor="middle" font-weight="700">+200% markup from farm to consumer</text>
+        </svg>
+      </div>
+
+      <!-- key monetary stat -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem;">
+        <div class="card" style="padding:.55rem .8rem;text-align:center;">
+          <p style="font-size:1.3rem;font-weight:900;color:var(--accent);line-height:1;">8.5%</p>
+          <p style="font-size:.6rem;color:var(--muted);margin-top:.2rem;">BB Policy Rate (2024)</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.58rem;color:var(--muted);">সুদের হার (৯% সীমা তুলে দেওয়ার পর)</p>
+        </div>
+        <div class="card red-accent" style="padding:.55rem .8rem;text-align:center;">
+          <p style="font-size:1.3rem;font-weight:900;color:var(--red);line-height:1;">৳250</p>
+          <p style="font-size:.6rem;color:var(--muted);margin-top:.2rem;">Onion price peak (2023)</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.58rem;color:var(--muted);">পেঁয়াজ — সিন্ডিকেটের প্রভাব</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SLIDE 9 — IMPACT OVERVIEW (updated 2026)
+══════════════════════════════════════════════════════ -->
+<div class="slide" style="padding:32px 56px 44px; justify-content:flex-start;">
+
+  <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.9rem;width:100%;max-width:1100px;">
+    <div class="tag tag-red" style="margin-bottom:0;font-size:.6rem;">Economic Impact | অর্থনৈতিক প্রভাব</div>
+    <div>
+      <h2 style="font-size:1.35rem;margin-bottom:0;">How Inflation Affects the Economy</h2>
+      <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.72rem;color:var(--muted);">মুদ্রাস্ফীতি অর্থনীতিকে কীভাবে প্রভাবিত করে — Bangladesh 2022–2026</p>
+    </div>
+  </div>
+
+  <!-- 4 impact cards -->
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;width:100%;max-width:1100px;margin-bottom:.85rem;">
+    <div class="card red-accent" style="text-align:center;padding:.9rem .8rem;">
+      <div style="font-size:1.8rem;margin-bottom:.4rem;">🏠</div>
+      <h3 style="font-size:.82rem;margin-bottom:.3rem;">Households | পরিবার</h3>
+      <p style="font-size:.72rem;color:var(--muted);">প্রকৃত আয় হ্রাস — খাদ্য ব্যয় আয়ের <strong style="color:var(--red);">70%+</strong></p>
+    </div>
+    <div class="card gold-accent" style="text-align:center;padding:.9rem .8rem;">
+      <div style="font-size:1.8rem;margin-bottom:.4rem;">🏭</div>
+      <h3 style="font-size:.82rem;margin-bottom:.3rem;">Business | ব্যবসা</h3>
+      <p style="font-size:.72rem;color:var(--muted);">উৎপাদন ব্যয় বৃদ্ধি — FDI <strong style="color:var(--gold);">↓ $3.1B</strong> (FY25)</p>
+    </div>
+    <div class="card blue-accent" style="text-align:center;padding:.9rem .8rem;">
+      <div style="font-size:1.8rem;margin-bottom:.4rem;">⚖️</div>
+      <h3 style="font-size:.82rem;margin-bottom:.3rem;">Inequality | বৈষম্য</h3>
+      <p style="font-size:.72rem;color:var(--muted);">Gini <strong style="color:var(--accent);">0.499</strong> — ধনী-গরিব ব্যবধান বাড়ছে</p>
+    </div>
+    <div class="card" style="text-align:center;padding:.9rem .8rem;">
+      <div style="font-size:1.8rem;margin-bottom:.4rem;">🌐</div>
+      <h3 style="font-size:.82rem;margin-bottom:.3rem;">Macro | সামষ্টিক</h3>
+      <p style="font-size:.72rem;color:var(--muted);">FX reserve <strong style="color:#4dd6a0;">$20.4B</strong> (Jan 2026) — চাপে</p>
+    </div>
+  </div>
+
+  <!-- real data snapshot grid -->
+  <div style="display:grid;grid-template-columns:1fr 1px 1fr;gap:1rem;width:100%;max-width:1100px;flex:1;">
+
+    <!-- left: key impact numbers -->
+    <div style="display:flex;flex-direction:column;gap:.55rem;">
+      <p style="font-size:.75rem;font-weight:700;color:var(--gold);margin-bottom:.1rem;">📊 Real Impact Data — 2024–2026</p>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:.35rem .7rem;background:rgba(244,42,65,.08);border-radius:8px;border-left:3px solid var(--red);">
+        <span style="font-size:.72rem;color:var(--text);">🍚 চালের দাম (মোটা) — 2026</span>
+        <span style="font-size:.78rem;font-weight:800;color:var(--red);">৳৬০–৭০/kg ▲</span>
+      </div>
+
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:.35rem .7rem;background:rgba(245,197,24,.08);border-radius:8px;border-left:3px solid var(--gold);">
+        <span style="font-size:.72rem;color:var(--text);">🛢️ সয়াবিন তেল (লিটার) — 2026</span>
+        <span style="font-size:.78rem;font-weight:800;color:var(--gold);">৳১৬৫–১৮০ ▲</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:.35rem .7rem;background:rgba(245,197,24,.08);border-radius:8px;border-left:3px solid var(--gold);">
+        <span style="font-size:.72rem;color:var(--text);">📚 কাগজ ও স্টেশনারি — 2024–26</span>
+        <span style="font-size:.78rem;font-weight:800;color:var(--gold);">+40–60% ▲</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:.35rem .7rem;background:rgba(77,166,255,.08);border-radius:8px;border-left:3px solid var(--accent);">
+        <span style="font-size:.72rem;color:var(--text);">💊 ওষুধের দাম — 2025</span>
+        <span style="font-size:.78rem;font-weight:800;color:var(--accent);">+15–25% ▲</span>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;padding:.35rem .7rem;background:rgba(77,214,160,.08);border-radius:8px;border-left:3px solid #4dd6a0;">
+        <span style="font-size:.72rem;color:var(--text);">🏠 ঢাকায় বাসা ভাড়া — 2025</span>
+        <span style="font-size:.78rem;font-weight:800;color:#4dd6a0;">+20–35% ▲</span>
+      </div>
+    </div>
+
+    <div style="background:var(--border);"></div>
+
+    <!-- right: quote + 2025-26 outlook -->
+    <div style="display:flex;flex-direction:column;gap:.6rem;">
+      <blockquote style="margin:0;font-size:.83rem;">
+        "Inflation is a tax on the poor — eroding wages &amp; savings while asset holders benefit."
+        <span class="bn" style="font-size:.78rem;color:var(--muted);font-style:normal;display:block;margin-top:.35rem;">"মুদ্রাস্ফীতি দরিদ্রদের উপর আরোপিত কর — মজুরি ও সঞ্চয় ক্ষয় করে, অথচ সম্পদশালীরা উপকৃত হয়।"</span>
+      </blockquote>
+
+      <div class="card" style="padding:.75rem 1rem;">
+        <p style="font-size:.75rem;font-weight:700;color:var(--text);margin-bottom:.5rem;">📅 2025–26 Outlook | ভবিষ্যৎ প্রত্যাশা</p>
+        <div style="display:flex;flex-direction:column;gap:.35rem;">
+          <div style="display:flex;gap:.6rem;align-items:flex-start;">
+            <span style="color:#4dd6a0;font-size:.8rem;flex-shrink:0;">▼</span>
+            <p style="font-size:.7rem;color:var(--muted);">CPI মুদ্রাস্ফীতি <strong style="color:#4dd6a0;">৭–৮%-এ</strong> নামার প্রত্যাশা (IMF, World Bank 2025 প্রজেকশন)</p>
+          </div>
+          <div style="display:flex;gap:.6rem;align-items:flex-start;">
+            <span style="color:var(--gold);font-size:.8rem;flex-shrink:0;">→</span>
+            <p style="font-size:.7rem;color:var(--muted);">BB policy rate <strong style="color:var(--gold);">8.5%</strong> বজায় — কঠোর মুদ্রানীতি অব্যাহত</p>
+          </div>
+          <div style="display:flex;gap:.6rem;align-items:flex-start;">
+            <span style="color:var(--red);font-size:.8rem;flex-shrink:0;">⚠️</span>
+            <p style="font-size:.7rem;color:var(--muted);">তৃতীয় বিশ্বযুদ্ধের ঝুঁকি, মধ্যপ্রাচ্য সংকট ও তেলের দাম — downside risk বিদ্যমান</p>
+          </div>
+          <div style="display:flex;gap:.6rem;align-items:flex-start;">
+            <span style="color:var(--accent);font-size:.8rem;flex-shrink:0;">→</span>
+            <p style="font-size:.7rem;color:var(--muted);">IMF-এর $4.7B ঋণ প্যাকেজ (2023–26) — সংস্কার শর্তে সহায়তা</p>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-
-<!-- ══════════════════════════════════════════════════════
-     SLIDE 7 — COST PUSH
-══════════════════════════════════════════════════════ -->
-<div class="slide">
-  <div class="sec-header">
-    <div class="tag tag-red">Cause 2 | কারণ ২</div>
-    <h2>Cost-Push Inflation <span class="bn-sub" style="display:inline; font-size:.75em; color:var(--muted);">ব্যয়-চালিত মুদ্রাস্ফীতি</span></h2>
-  </div>
-  <div class="grid g3" style="max-width:1080px;">
-    <div class="card red-accent">
-      <div class="icon-circle ic-red">⚡</div>
-      <h3 style="color:var(--red);">Energy Price Hikes | জ্বালানির মূল্যবৃদ্ধি</h3>
-      <p>Fuel oil prices hiked <strong>42–51%</strong> in Aug 2022. Electricity tariffs raised multiple times in 2023–24, cascading into every sector.</p>
-      <p class="bn-label">২০২২ সালে জ্বালানি তেলের দাম ৪২–৫১% বৃদ্ধি পেয়েছে।</p>
-    </div>
-    <div class="card">
-      <div class="icon-circle ic-gold">🌾</div>
-      <h3>Food Supply Disruption | খাদ্য সরবরাহ বিঘ্ন</h3>
-      <p>Russia–Ukraine war cut global wheat &amp; edible oil supply. Bangladesh imports <strong>~40% of wheat</strong> — a direct price pass-through.</p>
-      <p class="bn-label">রাশিয়া–ইউক্রেন যুদ্ধ বৈশ্বিক গম ও ভোজ্যতেলের সরবরাহ কমিয়েছে।</p>
-    </div>
-    <div class="card">
-      <div class="icon-circle ic-blue">🚢</div>
-      <h3>Freight &amp; Import Costs | আমদানি ব্যয়</h3>
-      <p>Red Sea disruptions &amp; post-COVID container shortages raised freight costs by <strong>200–400%</strong>.</p>
-      <p class="bn-label">লোহিত সাগরে জাহাজ চলাচলে বিঘ্নের কারণে মালবাহী খরচ ২০০–৪০০% বৃদ্ধি পেয়েছে।</p>
-    </div>
-    <div class="card red-accent">
-      <div class="icon-circle ic-red">📉</div>
-      <h3 style="color:var(--red);">Taka Depreciation | টাকার অবমূল্যায়ন</h3>
-      <p>BDT dropped from <strong>~৳86 (2021)</strong> to <strong>~৳110+ per USD (2023–24)</strong>, making all imports significantly costlier.</p>
-      <p class="bn-label">টাকার মান পড়ে যাওয়ায় আমদানি ব্যয় ব্যাপকভাবে বৃদ্ধি পেয়েছে।</p>
-    </div>
-    <div class="card gold-accent">
-      <div class="icon-circle ic-gold">👷</div>
-      <h3>Wage Increases | মজুরি বৃদ্ধি</h3>
-      <p>RMG minimum wage raised from <strong>৳8,000 → ৳12,500</strong> (2023), increasing production costs passed on as higher prices.</p>
-      <p class="bn-label">পোশাক শিল্পে ন্যূনতম মজুরি বৃদ্ধি উৎপাদন খরচ বাড়িয়েছে।</p>
-    </div>
-    <div class="card">
-      <div class="icon-circle ic-green">🌡️</div>
-      <h3>Climate Shocks | জলবায়ু আঘাত</h3>
-      <p>Cyclone Mocha (2023), floods &amp; droughts reduce domestic agricultural output, cutting food supply.</p>
-      <p class="bn-label">ঘূর্ণিঝড় মোখা, বন্যা ও খরা কৃষি উৎপাদন কমিয়ে খাদ্যের দাম বাড়িয়েছে।</p>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════════════
-     SLIDE 8 — MONETARY / STRUCTURAL
-══════════════════════════════════════════════════════ -->
-<div class="slide">
-  <div class="sec-header">
-    <div class="tag">Cause 3 | কারণ ৩</div>
-    <h2>Monetary &amp; Structural Factors <span class="bn-sub" style="display:block;">মুদ্রানীতি ও কাঠামোগত কারণ</span></h2>
-  </div>
-  <div class="grid g2" style="max-width:1020px; align-items:start;">
-    <ul class="fancy" style="font-size:.88rem;">
-      <li>
-        <strong>Excess Money Supply | অতিরিক্ত অর্থ সরবরাহ</strong>
-        <span class="bn-label">M2 প্রবৃদ্ধি ~১০–১২% বনাম GDP প্রবৃদ্ধি ~৬% — অতিরিক্ত অর্থ মূল্যস্তর বাড়ায়।</span>
-      </li>
-      <li>
-        <strong>Capped Lending Rates | সুদের হারে সীমা</strong>
-        <span class="bn-label">৯% ঋণ সীমা (২০২৩ সালে প্রত্যাহার) সস্তা ঋণ-চালিত চাহিদা তৈরি করেছিল।</span>
-      </li>
-      <li>
-        <strong>Deficit Financing | ঘাটতি অর্থায়ন</strong>
-        <span class="bn-label">সরকারি ঘাটতি পূরণে টাকা ছাপানো সরাসরি অর্থ সরবরাহ বৃদ্ধি করেছে।</span>
-      </li>
-      <li>
-        <strong>Market Syndication | বাজার সিন্ডিকেট</strong>
-        <span class="bn-label">পেঁয়াজ, চাল, ভোজ্যতেল বাজারে মুষ্টিমেয় ব্যবসায়ীদের কারসাজিতে কৃত্রিম মূল্যবৃদ্ধি।</span>
-      </li>
-      <li>
-        <strong>Supply Chain Inefficiency | সাপ্লাই চেইন অদক্ষতা</strong>
-        <span class="bn-label">কৃষক থেকে ভোক্তা পর্যন্ত ৫–৭ মধ্যস্বত্বভোগী দাম ৩০–৫০% বাড়িয়ে দেয়।</span>
-      </li>
-      <li>
-        <strong>Weak Competition Policy | প্রতিযোগিতা নীতির দুর্বলতা</strong>
-        <span class="bn-label">অ্যান্টি-ট্রাস্ট আইনের দুর্বল প্রয়োগ কার্টেলিজেশনকে সুযোগ দেয়।</span>
-      </li>
-    </ul>
-    <div>
-      <div class="card glow-green" style="margin-bottom:.9rem;">
-        <h3>M2 Growth vs Inflation vs GDP | তুলনামূলক চিত্র</h3>
-        <div style="margin-top:.7rem;">
-          <div class="bar-row"><div class="bar-label">M2 Growth</div><div class="bar-track"><div class="bar-fill bar-blue" style="width:100%;">~11% (FY24)</div></div></div>
-          <div class="bar-row"><div class="bar-label">CPI Inflation</div><div class="bar-track"><div class="bar-fill bar-red" style="width:86%;">9.5% (FY24)</div></div></div>
-          <div class="bar-row"><div class="bar-label">GDP Growth</div><div class="bar-track"><div class="bar-fill bar-green" style="width:55%;">~6.0%</div></div></div>
-        </div>
-        <p style="font-size:.75rem; color:var(--muted); margin-top:.6rem; font-style:italic;">যখন অর্থ সরবরাহ প্রকৃত উৎপাদনের চেয়ে দ্রুত বাড়ে, অতিরিক্ত অর্থ একই পণ্যের পেছনে ছোটে — Quantity Theory of Money।</p>
-      </div>
-      <!-- Mini supply chain SVG -->
-      <div class="card">
-        <h3>Supply Chain | সাপ্লাই চেইন</h3>
-        <svg viewBox="0 0 300 60" style="width:100%; margin-top:.5rem;">
-          <rect x="2"   y="18" width="52" height="24" rx="6" fill="#006a4e" opacity=".85"/>
-          <text x="28"  y="33" fill="#fff" font-size="8" text-anchor="middle">Farmer</text>
-          <text x="28"  y="43" fill="#aaf" font-size="6.5" text-anchor="middle" font-family="Noto Sans Bengali">কৃষক</text>
-          <text x="64"  y="32" fill="#f5c518" font-size="10">→</text>
-          <rect x="74"  y="18" width="52" height="24" rx="6" fill="#1a2230"/>
-          <text x="100" y="30" fill="#bfcfdf" font-size="7.5" text-anchor="middle">Middlemen</text>
-          <text x="100" y="41" fill="#aaf" font-size="6.5" text-anchor="middle" font-family="Noto Sans Bengali">মধ্যস্বত্বভোগী</text>
-          <text x="134" y="32" fill="#f5c518" font-size="10">→</text>
-          <rect x="144" y="18" width="52" height="24" rx="6" fill="#1a2230"/>
-          <text x="170" y="30" fill="#bfcfdf" font-size="7.5" text-anchor="middle">Wholesale</text>
-          <text x="170" y="41" fill="#aaf" font-size="6.5" text-anchor="middle" font-family="Noto Sans Bengali">পাইকার</text>
-          <text x="204" y="32" fill="#f5c518" font-size="10">→</text>
-          <rect x="214" y="18" width="52" height="24" rx="6" fill="#1a2230"/>
-          <text x="240" y="30" fill="#bfcfdf" font-size="7.5" text-anchor="middle">Retail</text>
-          <text x="240" y="41" fill="#aaf" font-size="6.5" text-anchor="middle" font-family="Noto Sans Bengali">খুচরা</text>
-          <text x="274" y="32" fill="#f5c518" font-size="10">→</text>
-          <rect x="283" y="14" width="14" height="32" rx="4" fill="#f42a41" opacity=".8"/>
-          <text x="290" y="34" fill="#fff" font-size="7" text-anchor="middle">C</text>
-          <!-- price arrow -->
-          <text x="150" y="10" fill="#f42a41" font-size="7.5" text-anchor="middle">+30–50% price markup</text>
-          <text x="150" y="58" fill="#7a8fa6" font-size="6.5" text-anchor="middle" font-family="Noto Sans Bengali">৩০–৫০% মূল্য বৃদ্ধি</text>
-        </svg>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════════════════
-     SLIDE 9 — IMPACT OVERVIEW
-══════════════════════════════════════════════════════ -->
-<div class="slide">
-  <div class="sec-header">
-    <div class="tag tag-red">Economic Impact | অর্থনৈতিক প্রভাব</div>
-    <h2>How Inflation Affects the Economy <span class="bn-sub" style="display:block;">মুদ্রাস্ফীতি অর্থনীতিকে কীভাবে প্রভাবিত করে</span></h2>
-  </div>
-  <div class="grid g4" style="max-width:1020px; margin-bottom:1.2rem;">
-    <div class="card red-accent" style="text-align:center;">
-      <div class="icon-circle ic-red" style="margin:0 auto .6rem;">🏠</div>
-      <h3>Households | পরিবার</h3>
-      <p style="font-size:.83rem;">Erodes real income &amp; purchasing power</p>
-      <p class="bn-label">প্রকৃত আয় ও ক্রয় ক্ষমতা হ্রাস</p>
-    </div>
-    <div class="card gold-accent" style="text-align:center;">
-      <div class="icon-circle ic-gold" style="margin:0 auto .6rem;">🏭</div>
-      <h3>Business | ব্যবসা</h3>
-      <p style="font-size:.83rem;">Raises costs, deters investment</p>
-      <p class="bn-label">ব্যয় বৃদ্ধি, বিনিয়োগ হ্রাস</p>
-    </div>
-    <div class="card blue-accent" style="text-align:center;">
-      <div class="icon-circle ic-blue" style="margin:0 auto .6rem;">⚖️</div>
-      <h3>Inequality | বৈষম্য</h3>
-      <p style="font-size:.83rem;">Widens wealth gap — poor hit hardest</p>
-      <p class="bn-label">সম্পদ বৈষম্য বৃদ্ধি — দরিদ্ররা সবচেয়ে বেশি ক্ষতিগ্রস্ত</p>
-    </div>
-    <div class="card" style="text-align:center;">
-      <div class="icon-circle ic-green" style="margin:0 auto .6rem;">🌐</div>
-      <h3>Macro | সামষ্টিক</h3>
-      <p style="font-size:.83rem;">Weakens taka, strains FX reserves</p>
-      <p class="bn-label">টাকার দুর্বলতা, বৈদেশিক মুদ্রা রিজার্ভে চাপ</p>
-    </div>
-  </div>
-  <blockquote style="max-width:860px; text-align:left;">
-    "Inflation is a tax on the poor. It erodes wages &amp; savings, while asset holders — land, gold, stocks — actually benefit."
-    <br><span class="bn" style="font-size:.88rem; color:var(--muted); display:block; margin-top:.4rem; font-style:normal;">"মুদ্রাস্ফীতি দরিদ্রদের উপর আরোপিত কর। এটি মজুরি ও সঞ্চয় ক্ষয় করে, অথচ সম্পদশালীরা উপকৃত হয়।"</span>
-  </blockquote>
 </div>
 
 <!-- ══════════════════════════════════════════════════════
      SLIDE 10 — IMPACT: HOUSEHOLDS
 ══════════════════════════════════════════════════════ -->
-<div class="slide">
-  <div class="sec-header">
-    <div class="tag tag-red">Impact 1 | প্রভাব ১</div>
-    <h2>Impact on Households &amp; Living Standards <span class="bn-sub" style="display:block;">পরিবার ও জীবনমানে প্রভাব</span></h2>
+<div class="slide" style="padding:36px 64px 52px; justify-content:flex-start;">
+  <div style="margin-bottom:1rem;width:100%;max-width:1100px;">
+    <div class="tag tag-red" style="margin-bottom:.5rem;">Impact 1 | প্রভাব ১</div>
+    <h2 style="font-size:1.4rem;margin-bottom:.2rem;">Impact on Households &amp; Living Standards</h2>
+    <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.75rem;color:var(--muted);">পরিবার ও জীবনমানে প্রভাব</p>
   </div>
   <div class="grid g2" style="max-width:1020px; align-items:start;">
-    <ul class="fancy red" style="font-size:.88rem;">
-      <li><strong>Real Wage Erosion | প্রকৃত মজুরি ক্ষয়</strong><span class="bn-label">নামমাত্র মজুরি ~৭–৮% বাড়লেও মুদ্রাস্ফীতি ~৯.৫% — প্রকৃত আয় কমছে।</span></li>
-      <li><strong>Food Security Crisis | খাদ্য নিরাপত্তা সংকট</strong><span class="bn-label">১০%+ খাদ্য মুদ্রাস্ফীতি নিম্নআয়ের পরিবারগুলোকে খাবারের পরিমাণ বা মান কমাতে বাধ্য করছে।</span></li>
-      <li><strong>Education &amp; Health Cut | শিক্ষা ও স্বাস্থ্যে কাটছাঁট</strong><span class="bn-label">খাদ্য ব্যয় মেটাতে শিক্ষা ও স্বাস্থ্য খরচ কমানো — দীর্ঘমেয়াদী মানব পুঁজির ক্ষতি।</span></li>
-      <li><strong>Savings Depletion | সঞ্চয় ক্ষয়</strong><span class="bn-label">ব্যাংক সুদের চেয়ে মুদ্রাস্ফীতি বেশি হলে প্রকৃত সঞ্চয়ের মূল্য কমে যায়।</span></li>
-      <li><strong>Debt Trap Risk | ঋণের ফাঁদ</strong><span class="bn-label">দৈনন্দিন খরচ মেটাতে ঋণ নেওয়ার ফলে ঋণ নির্ভরতার চক্রে পড়ছে পরিবারগুলো।</span></li>
-    </ul>
-    <div>
-      <div class="card red-accent glow-red" style="margin-bottom:.9rem;">
-        <h3>Food Expenditure Share — Low-Income Urban HH <span class="bn" style="font-size:.75rem; color:var(--muted);">নিম্নআয়ের শহর পরিবারে খাদ্য ব্যয়ের অনুপাত</span></h3>
-        <div style="margin-top:.6rem;">
-          <div class="bar-row"><div class="bar-label">2020</div><div class="bar-track"><div class="bar-fill bar-green" style="width:60%;">~58%</div></div></div>
-          <div class="bar-row"><div class="bar-label">2021</div><div class="bar-track"><div class="bar-fill bar-gold" style="width:63%;">~61%</div></div></div>
-          <div class="bar-row"><div class="bar-label">2022</div><div class="bar-track"><div class="bar-fill bar-red" style="width:68%;">~65%</div></div></div>
-          <div class="bar-row"><div class="bar-label">2023</div><div class="bar-track"><div class="bar-fill bar-red" style="width:74%;">~70%</div></div></div>
+    <div style="display:flex;flex-direction:column;gap:.45rem;">
+      <div class="card" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.1rem;flex-shrink:0;">📉</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">প্রকৃত মজুরি ক্ষয় | Real Wage Erosion</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">মজুরি বৃদ্ধি ~৮% কিন্তু মুদ্রাস্ফীতি ~৯.৭% — প্রকৃত আয় ঋণাত্মক (২০২৪–২৫)</p>
         </div>
-        <p style="font-size:.75rem; color:var(--muted); margin-top:.6rem;">খাদ্য ব্যয় বাড়লে স্বাস্থ্য, শিক্ষা ও সঞ্চয় কমে — দারিদ্র্যের ফাঁদের সংকেত।</p>
       </div>
-      <!-- Pie for spending -->
-      <div class="card">
-        <h3>Spending Breakdown 2023 <span class="bn" style="font-size:.75rem;">ব্যয় বিভাজন</span></h3>
-        <div style="display:flex; align-items:center; gap:1rem; margin-top:.4rem;">
-          <svg viewBox="0 0 100 100" width="80" height="80" style="flex-shrink:0;">
-            <!-- Food 70%, Health 8%, Education 6%, Other 16% -->
-            <circle cx="50" cy="50" r="40" fill="none" stroke="#f42a41" stroke-width="20"
-              stroke-dasharray="176 75" stroke-dashoffset="0"/>
-            <circle cx="50" cy="50" r="40" fill="none" stroke="#4da6ff" stroke-width="20"
-              stroke-dasharray="20 231" stroke-dashoffset="-176"/>
-            <circle cx="50" cy="50" r="40" fill="none" stroke="#f5c518" stroke-width="20"
-              stroke-dasharray="15 236" stroke-dashoffset="-196"/>
-            <circle cx="50" cy="50" r="40" fill="none" stroke="#7a8fa6" stroke-width="20"
-              stroke-dasharray="40 211" stroke-dashoffset="-211"/>
-            <circle cx="50" cy="50" r="28" fill="#131920"/>
+      <div class="card red-accent" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.1rem;flex-shrink:0;">🍚</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">খাদ্য নিরাপত্তা সংকট | Food Security Crisis</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">চাল ৳৬০–৭০/kg, ডিম ৳৫৫–৬৫/হালি (২০২৬) — নিম্নআয়ের পরিবার খাবার কমাচ্ছে</p>
+        </div>
+      </div>
+      <div class="card" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.1rem;flex-shrink:0;">📚</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">শিক্ষায় কাটছাঁট | Education Cut</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">কাগজ ও স্টেশনারিতে ৪০–৬০% মূল্যবৃদ্ধি → স্কুলের খরচ বহন কঠিন</p>
+        </div>
+      </div>
+      <div class="card" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.1rem;flex-shrink:0;">💊</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">স্বাস্থ্য ব্যয় বৃদ্ধি | Healthcare Cost</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">ওষুধের দাম ১৫–২৫% বৃদ্ধি (২০২৫) → চিকিৎসায় অবহেলা বাড়ছে</p>
+        </div>
+      </div>
+      <div class="card red-accent" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.1rem;flex-shrink:0;">💳</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">ঋণের ফাঁদ | Debt Trap</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">MFI ঋণগ্রহীতা বৃদ্ধি — দৈনন্দিন খরচে ঋণ নির্ভরতা বাড়ছে (PKSF 2025)</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:.6rem;">
+      <div class="card red-accent" style="padding:.75rem 1rem;">
+        <h3 style="font-size:.78rem;margin-bottom:.5rem;">Food Expenditure Share — নিম্নআয়ের পরিবার</h3>
+        <div class="bar-row" style="margin-bottom:.4rem;"><div class="bar-label" style="width:55px;font-size:.7rem;">2020</div><div class="bar-track" style="height:19px;"><div class="bar-fill bar-green" style="width:58%;font-size:.65rem;">~58%</div></div></div>
+        <div class="bar-row" style="margin-bottom:.4rem;"><div class="bar-label" style="width:55px;font-size:.7rem;">2022</div><div class="bar-track" style="height:19px;"><div class="bar-fill bar-gold" style="width:65%;font-size:.65rem;">~65%</div></div></div>
+        <div class="bar-row" style="margin-bottom:.4rem;"><div class="bar-label" style="width:55px;font-size:.7rem;">2024</div><div class="bar-track" style="height:19px;"><div class="bar-fill bar-red" style="width:72%;font-size:.65rem;">~72%</div></div></div>
+        <div class="bar-row" style="margin-bottom:0;"><div class="bar-label" style="width:55px;font-size:.7rem;">2026*</div><div class="bar-track" style="height:19px;"><div class="bar-fill bar-red" style="width:76%;font-size:.65rem;">~75%▲</div></div></div>
+        <p style="font-size:.63rem;color:var(--muted);margin-top:.45rem;">*প্রক্ষেপণ · Source: HIES, BBS, World Bank 2025</p>
+      </div>
+
+      <div class="card" style="padding:.75rem 1rem;">
+        <h3 style="font-size:.78rem;margin-bottom:.45rem;">Spending Breakdown 2025 | ব্যয় বিভাজন</h3>
+        <div style="display:flex;align-items:center;gap:1rem;">
+          <svg viewBox="0 0 100 100" width="78" height="78" style="flex-shrink:0;">
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#f42a41" stroke-width="19" stroke-dasharray="178 61" stroke-dashoffset="0"/>
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#4da6ff" stroke-width="19" stroke-dasharray="17 222" stroke-dashoffset="-178"/>
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#f5c518" stroke-width="19" stroke-dasharray="13 226" stroke-dashoffset="-195"/>
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#7a8fa6" stroke-width="19" stroke-dasharray="31 208" stroke-dashoffset="-208"/>
+            <circle cx="50" cy="50" r="26" fill="#131920"/>
           </svg>
-          <div style="font-size:.72rem; line-height:2;">
-            <div><span style="color:#f42a41;">■</span> Food খাদ্য 70%</div>
-            <div><span style="color:#4da6ff;">■</span> Health স্বাস্থ্য 8%</div>
-            <div><span style="color:#f5c518;">■</span> Education শিক্ষা 6%</div>
-            <div><span style="color:#7a8fa6;">■</span> Other অন্যান্য 16%</div>
+          <div style="font-size:.7rem;line-height:1.9;">
+            <div><span style="color:#f42a41;">■</span> খাদ্য Food — <strong>75%</strong></div>
+            <div><span style="color:#4da6ff;">■</span> স্বাস্থ্য Health — 7%</div>
+            <div><span style="color:#f5c518;">■</span> শিক্ষা Education — 5%</div>
+            <div><span style="color:#7a8fa6;">■</span> অন্যান্য Other — 13%</div>
           </div>
         </div>
       </div>
@@ -1084,235 +1492,405 @@
 </div>
 
 <!-- ══════════════════════════════════════════════════════
-     SLIDE 11 — IMPACT: BUSINESS
+     SLIDE 11 — IMPACT: BUSINESS (updated 2026)
 ══════════════════════════════════════════════════════ -->
-<div class="slide">
-  <div class="sec-header">
-    <div class="tag tag-gold">Impact 2 | প্রভাব ২</div>
-    <h2>Impact on Business, Investment &amp; Trade <span class="bn-sub" style="display:block;">ব্যবসা, বিনিয়োগ ও বাণিজ্যে প্রভাব</span></h2>
+<div class="slide" style="padding:28px 52px 36px; justify-content:flex-start;">
+
+  <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.75rem;width:100%;max-width:1100px;">
+    <div class="tag tag-gold" style="margin-bottom:0;font-size:.6rem;">Impact 2 | প্রভাব ২</div>
+    <div>
+      <h2 style="font-size:1.3rem;margin-bottom:0;">Impact on Business, Investment &amp; Trade</h2>
+      <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.7rem;color:var(--muted);">ব্যবসা, বিনিয়োগ ও বাণিজ্যে প্রভাব — 2022–2026</p>
+    </div>
   </div>
-  <div class="grid g3" style="max-width:1080px;">
-    <div class="card">
-      <div class="icon-circle ic-gold">📦</div>
-      <h3>Rising Input Costs | বাড়তি উপকরণ ব্যয়</h3>
-      <p>Energy, raw material &amp; labour costs squeeze profit margins, especially for SMEs.</p>
-      <p class="bn-label">জ্বালানি, কাঁচামাল ও শ্রম ব্যয় বৃদ্ধি মুনাফার মার্জিন সংকুচিত করছে।</p>
+
+  <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:.9rem;width:100%;max-width:1100px;align-items:start;">
+
+    <div style="display:flex;flex-direction:column;gap:.45rem;">
+      <div class="card gold-accent" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.1rem;flex-shrink:0;">📦</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">উপকরণ ব্যয় বৃদ্ধি | Rising Input Costs</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">জ্বালানি +৭৫%, কাঁচামাল +৩০–৫০% → SME মুনাফা মার্জিন সংকুচিত (২০২৪–২৫)</p>
+        </div>
+      </div>
+      <div class="card blue-accent" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.1rem;flex-shrink:0;">📉</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">FDI হ্রাস | Investment Uncertainty</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">FDI <strong style="color:var(--accent);">$3.1B (FY25)</strong> — অস্থির মুদ্রাস্ফীতিতে বিদেশি বিনিয়োগকারীরা সরে যাচ্ছে</p>
+        </div>
+      </div>
+      <div class="card" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.1rem;flex-shrink:0;">👗</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">RMG প্রতিযোগিতা হুমকি | RMG Competitiveness</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">রপ্তানির ৮৪% পোশাক শিল্প — ভিয়েতনাম ও কম্বোডিয়ার কাছে বাজার হারানোর ঝুঁকি</p>
+        </div>
+      </div>
+      <div class="card red-accent" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.1rem;flex-shrink:0;">🏦</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">ঋণ খরচ বৃদ্ধি | Credit Cost</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">BB policy rate <strong style="color:var(--red);">8.5%</strong> → ব্যবসায়িক ঋণ ব্যয়বহুল → বিনিয়োগ হ্রাস</p>
+        </div>
+      </div>
+      <div class="card" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.1rem;flex-shrink:0;">💱</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">বিনিময় হারের চাপ | Exchange Rate</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">৳১১৭/USD (২০২৫) → আমদানি ব্যয় বৃদ্ধি, FX reserve চাপে ($20.4B, Jan 2026)</p>
+        </div>
+      </div>
+      <div class="card" style="padding:.5rem .85rem;display:flex;gap:.7rem;align-items:center;">
+        <span style="font-size:1.1rem;flex-shrink:0;">📊</span>
+        <div>
+          <p style="font-size:.75rem;font-weight:700;color:var(--text);">DSE শেয়ারবাজারে প্রভাব | Stock Market</p>
+          <p style="font-size:.67rem;color:var(--muted);margin-top:.08rem;">উচ্চ সুদে আমানত আকর্ষণীয় → DSE সূচক চাপে — বিনিয়োগকারীরা equity ছাড়ছে</p>
+        </div>
+      </div>
     </div>
-    <div class="card blue-accent">
-      <div class="icon-circle ic-blue">🏗️</div>
-      <h3>Investment Uncertainty | বিনিয়োগ অনিশ্চয়তা</h3>
-      <p>Volatile inflation raises risk premiums; FDI inflows may decline as cost predictability drops.</p>
-      <p class="bn-label">অস্থির মুদ্রাস্ফীতি ঝুঁকি বাড়িয়ে প্রত্যক্ষ বিদেশি বিনিয়োগ কমাতে পারে।</p>
-    </div>
-    <div class="card gold-accent">
-      <div class="icon-circle ic-gold">👗</div>
-      <h3>RMG Competitiveness | পোশাক শিল্পের প্রতিযোগিতা</h3>
-      <p>RMG — <strong>84% of exports</strong> — faces cost pressure. Risk of losing market share to Vietnam &amp; Cambodia.</p>
-      <p class="bn-label">রপ্তানির ৮৪% পোশাক শিল্প — খরচ বৃদ্ধিতে প্রতিযোগিতামূলক সুবিধা হারানোর ঝুঁকি।</p>
-    </div>
-    <div class="card red-accent">
-      <div class="icon-circle ic-red">🏦</div>
-      <h3 style="color:var(--red);">Credit Market Distortion | ঋণ বাজারে বিকৃতি</h3>
-      <p>BB raising interest rates increases borrowing costs, cooling productive investment further.</p>
-      <p class="bn-label">উচ্চ সুদের হার ব্যবসায়িক ঋণ ব্যয়বহুল করে উৎপাদনশীল বিনিয়োগ কমায়।</p>
-    </div>
-    <div class="card">
-      <div class="icon-circle ic-red">💱</div>
-      <h3>Exchange Rate Pressure | বিনিময় হারের চাপ</h3>
-      <p>Persistent domestic inflation erodes taka competitiveness, pressures FX reserves.</p>
-      <p class="bn-label">অভ্যন্তরীণ মুদ্রাস্ফীতি টাকার প্রতিযোগিতামূলকতা কমায়, বৈদেশিক মুদ্রায় চাপ পড়ে।</p>
-    </div>
-    <div class="card">
-      <div class="icon-circle ic-blue">📉</div>
-      <h3>Stock Market Impact | শেয়ার বাজারে প্রভাব</h3>
-      <p>DSE suffers as higher interest rates make bonds/deposits more attractive vs. equities.</p>
-      <p class="bn-label">উচ্চ সুদের হারে আমানত আকর্ষণীয় হলে ঢাকা শেয়ারবাজারে বিনিয়োগকারীরা সরে যায়।</p>
+
+    <div style="display:flex;flex-direction:column;gap:.6rem;">
+      <div class="card" style="padding:.8rem 1rem;">
+        <h3 style="font-size:.78rem;margin-bottom:.55rem;">Key Business Indicators | মূল তথ্য (2024–26)</h3>
+        <div style="display:flex;flex-direction:column;gap:.35rem;">
+          <div style="display:flex;justify-content:space-between;padding:.3rem .5rem;background:rgba(244,42,65,.08);border-radius:7px;border-left:3px solid var(--red);">
+            <span style="font-size:.7rem;color:var(--text);">📉 FDI inflow FY25</span>
+            <span style="font-size:.75rem;font-weight:800;color:var(--red);">$3.1B ▼</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem .5rem;background:rgba(245,197,24,.08);border-radius:7px;border-left:3px solid var(--gold);">
+            <span style="font-size:.7rem;color:var(--text);">👗 RMG export FY25</span>
+            <span style="font-size:.75rem;font-weight:800;color:var(--gold);">$38.5B</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem .5rem;background:rgba(244,42,65,.08);border-radius:7px;border-left:3px solid var(--red);">
+            <span style="font-size:.7rem;color:var(--text);">🏦 BB Policy Rate (2025)</span>
+            <span style="font-size:.75rem;font-weight:800;color:var(--red);">8.5% ▲</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem .5rem;background:rgba(77,166,255,.08);border-radius:7px;border-left:3px solid var(--accent);">
+            <span style="font-size:.7rem;color:var(--text);">💰 FX Reserve (Jan 2026)</span>
+            <span style="font-size:.75rem;font-weight:800;color:var(--accent);">$20.4B</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:.3rem .5rem;background:rgba(77,214,160,.08);border-radius:7px;border-left:3px solid #4dd6a0;">
+            <span style="font-size:.7rem;color:var(--text);">📈 GDP Growth FY25 est.</span>
+            <span style="font-size:.75rem;font-weight:800;color:#4dd6a0;">~5.5%</span>
+          </div>
+        </div>
+      </div>
+      <div style="background:rgba(245,197,24,.07);border:1px solid rgba(245,197,24,.2);border-radius:10px;padding:.55rem .85rem;">
+        <p style="font-size:.73rem;font-weight:700;color:var(--gold);">💡 Key Insight</p>
+        <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.67rem;color:var(--muted);margin-top:.2rem;line-height:1.6;">উচ্চ মুদ্রাস্ফীতি বিনিয়োগ পরিবেশ নষ্ট করে — বাংলাদেশের LDC graduation (2026) পরবর্তী প্রতিযোগিতায় এটি বড় চ্যালেঞ্জ।</p>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════════
-     SLIDE 12 — IMPACT: INEQUALITY
+     SLIDE 12 — IMPACT: INEQUALITY (updated 2026)
 ══════════════════════════════════════════════════════ -->
-<div class="slide">
-  <div class="sec-header">
-    <div class="tag">Impact 3 | প্রভাব ৩</div>
-    <h2>Inflation &amp; Income Inequality <span class="bn-sub" style="display:block;">মুদ্রাস্ফীতি ও আয় বৈষম্য</span></h2>
-  </div>
-  <div class="grid g2" style="max-width:1020px; align-items:start;">
+<div class="slide" style="padding:28px 52px 36px; justify-content:flex-start;">
+
+  <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.6rem;width:100%;max-width:1100px;">
+    <div class="tag" style="margin-bottom:0;">Impact 3 | প্রভাব ৩</div>
     <div>
-      <div class="card red-accent glow-red" style="margin-bottom:.9rem;">
-        <h3 style="color:var(--red);">Who Loses Most? | সবচেয়ে বেশি ক্ষতিগ্রস্ত কে?</h3>
-        <ul class="fancy red" style="font-size:.85rem;">
-          <li>Daily wage workers — <span class="bn">দৈনিক মজুর — আয় স্থির, ব্যয় বাড়ছে</span></li>
-          <li>Fixed salary employees — <span class="bn">বেতনভোগী — প্রকৃত আয় হ্রাস পাচ্ছে</span></li>
-          <li>Pensioners &amp; retirees — <span class="bn">পেনশনভোগী — নির্দিষ্ট আয়ের মূল্য কমছে</span></li>
-          <li>Small depositors — <span class="bn">ক্ষুদ্র আমানতকারী — ঋণাত্মক প্রকৃত সুদ</span></li>
-          <li>Rural landless poor — <span class="bn">ভূমিহীন গ্রামীণ দরিদ্র — আয়ের বেশিরভাগ খাদ্যে</span></li>
-        </ul>
+      <h2 style="font-size:1.4rem;margin-bottom:0;">Inflation &amp; Income Inequality</h2>
+      <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.78rem;color:var(--muted);">মুদ্রাস্ফীতি ও আয় বৈষম্য — Gini 0.499, World Bank 2022–2025</p>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:.8rem;width:100%;max-width:1100px;align-items:start;">
+
+    <div style="display:flex;flex-direction:column;gap:.5rem;">
+      <div class="card red-accent" style="padding:.6rem .9rem;">
+        <h3 style="color:var(--red);font-size:.88rem;margin-bottom:.45rem;">😔 সবচেয়ে বেশি ক্ষতিগ্রস্ত | Who Loses Most?</h3>
+        <div style="display:flex;flex-direction:column;gap:.28rem;">
+          <div style="padding:.28rem .55rem;background:rgba(244,42,65,.08);border-radius:6px;border-left:3px solid var(--red);">
+            <p style="font-size:.8rem;color:var(--text);">👷 দৈনিক মজুর — আয় স্থির, ব্যয় বাড়ছে <span style="color:var(--red);font-weight:700;">~40M জন</span></p>
+          </div>
+          <div style="padding:.28rem .55rem;background:rgba(244,42,65,.08);border-radius:6px;border-left:3px solid var(--red);">
+            <p style="font-size:.8rem;color:var(--text);">👔 বেতনভোগী শ্রেণি — প্রকৃত আয় <strong style="color:var(--red);">-১.৫% থেকে -২%</strong> (২০২৩–২৫)</p>
+          </div>
+          <div style="padding:.28rem .55rem;background:rgba(244,42,65,.08);border-radius:6px;border-left:3px solid var(--red);">
+            <p style="font-size:.8rem;color:var(--text);">👴 পেনশনভোগী — নির্দিষ্ট আয়ের ক্রয়ক্ষমতা প্রতি বছর কমছে</p>
+          </div>
+          <div style="padding:.28rem .55rem;background:rgba(244,42,65,.08);border-radius:6px;border-left:3px solid var(--red);">
+            <p style="font-size:.8rem;color:var(--text);">🌾 ভূমিহীন গ্রামীণ দরিদ্র — আয়ের ৮০%+ খাদ্যে ব্যয়</p>
+          </div>
+          <div style="padding:.28rem .55rem;background:rgba(244,42,65,.08);border-radius:6px;border-left:3px solid var(--red);">
+            <p style="font-size:.8rem;color:var(--text);">🎓 শিক্ষার্থী পরিবার — কাগজ, বই, স্টেশনারিতে ৪০–৬০% বৃদ্ধি</p>
+          </div>
+        </div>
       </div>
-      <div class="card glow-green">
-        <h3 style="color:var(--green2);">Who Is Shielded? | কারা সুরক্ষিত?</h3>
-        <ul class="fancy" style="font-size:.85rem;">
-          <li>Land &amp; property owners — <span class="bn">সম্পদের মূল্য বাড়ে</span></li>
-          <li>Commodity traders — <span class="bn">মূল্যবৃদ্ধি থেকে মুনাফা</span></li>
-          <li>Borrowers — <span class="bn">অবমূল্যায়িত মুদ্রায় ঋণ পরিশোধ</span></li>
-          <li>Export earners (RMG) — <span class="bn">টাকার দুর্বলতায় রপ্তানিকারক লাভবান</span></li>
-        </ul>
+      <div class="card" style="padding:.6rem .9rem;">
+        <h3 style="color:#4dd6a0;font-size:.88rem;margin-bottom:.45rem;">😊 কারা সুরক্ষিত? | Who Is Shielded?</h3>
+        <div style="display:flex;flex-direction:column;gap:.28rem;">
+          <div style="padding:.28rem .55rem;background:rgba(0,200,120,.08);border-radius:6px;border-left:3px solid #4dd6a0;">
+            <p style="font-size:.8rem;color:var(--text);">🏠 জমি ও সম্পত্তির মালিক — সম্পদের মূল্য মুদ্রাস্ফীতির সাথে বাড়ে</p>
+          </div>
+          <div style="padding:.28rem .55rem;background:rgba(0,200,120,.08);border-radius:6px;border-left:3px solid #4dd6a0;">
+            <p style="font-size:.8rem;color:var(--text);">📦 পণ্য ব্যবসায়ী ও সিন্ডিকেট — মূল্যবৃদ্ধি থেকে মুনাফা</p>
+          </div>
+          <div style="padding:.28rem .55rem;background:rgba(0,200,120,.08);border-radius:6px;border-left:3px solid #4dd6a0;">
+            <p style="font-size:.8rem;color:var(--text);">👗 RMG রপ্তানিকারক — টাকার দুর্বলতায় USD আয় বেশি মূল্যবান</p>
+          </div>
+          <div style="padding:.28rem .55rem;background:rgba(0,200,120,.08);border-radius:6px;border-left:3px solid #4dd6a0;">
+            <p style="font-size:.8rem;color:var(--text);">💛 প্রবাসী আয়কারী — বৈদেশিক মুদ্রায় আয়, দেশে বেশি মূল্য পাচ্ছে</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div>
-      <!-- Gini SVG Line Chart -->
-      <div class="card" style="margin-bottom:.9rem;">
-        <h3>Gini Coefficient — Bangladesh | জিনি সহগ</h3>
-        <svg viewBox="0 0 300 130" style="width:100%; margin-top:.6rem; overflow:visible;">
-          <line x1="40" y1="10" x2="280" y2="10" stroke="#1a2230" stroke-width="1"/>
-          <line x1="40" y1="50" x2="280" y2="50" stroke="#1a2230" stroke-width="1"/>
-          <line x1="40" y1="90" x2="280" y2="90" stroke="#1a2230" stroke-width="1"/>
-          <text x="34" y="14" fill="#7a8fa6" font-size="8" text-anchor="end">0.50</text>
-          <text x="34" y="54" fill="#7a8fa6" font-size="8" text-anchor="end">0.44</text>
-          <text x="34" y="94" fill="#7a8fa6" font-size="8" text-anchor="end">0.32</text>
-          <!-- Data: 2010=0.321, 2016=0.482, 2022=0.499 -->
-          <!-- Y: (0.50-val)/(0.50-0.30)*80 + 10 -->
-          <!-- 0.321 → (0.179/0.20)*80+10 = 71.6+10 = 82 -->
-          <!-- 0.482 → (0.018/0.20)*80+10 = 7.2+10 = 17 -->
-          <!-- 0.499 → (0.001/0.20)*80+10 = 0.4+10 = 10 -->
+
+    <div style="display:flex;flex-direction:column;gap:.5rem;">
+      <div class="card" style="padding:.7rem .9rem;">
+        <h3 style="font-size:.85rem;margin-bottom:.45rem;">Gini Coefficient — Bangladesh | জিনি সহগ (বৈষম্য সূচক)</h3>
+        <svg viewBox="0 0 300 120" style="width:100%;overflow:visible;">
+          <line x1="40" y1="10" x2="275" y2="10" stroke="#22303d" stroke-width="1"/>
+          <line x1="40" y1="45" x2="275" y2="45" stroke="#22303d" stroke-width="1"/>
+          <line x1="40" y1="80" x2="275" y2="80" stroke="#22303d" stroke-width="1"/>
+          <text x="34" y="14" fill="#7a8fa6" font-size="8" text-anchor="end">0.52</text>
+          <text x="34" y="49" fill="#7a8fa6" font-size="8" text-anchor="end">0.44</text>
+          <text x="34" y="84" fill="#7a8fa6" font-size="8" text-anchor="end">0.32</text>
           <defs>
-            <linearGradient id="giniGrad" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#f42a41" stop-opacity=".3"/>
-              <stop offset="100%" stop-color="#f42a41" stop-opacity="0"/>
+            <linearGradient id="giniGrad2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#f42a41" stop-opacity=".25"/>
+              <stop offset="100%" stop-color="#f42a41" stop-opacity=".01"/>
             </linearGradient>
           </defs>
-          <polygon points="80,82 180,17 270,11 270,90 80,90" fill="url(#giniGrad)"/>
-          <polyline points="80,82 180,17 270,11" fill="none" stroke="#f42a41" stroke-width="2.5" stroke-linejoin="round"/>
-          <circle cx="80"  cy="82" r="5" fill="#4dd6a0"/>
-          <circle cx="180" cy="17" r="5" fill="#f5c518"/>
-          <circle cx="270" cy="11" r="5" fill="#f42a41" stroke="#fff" stroke-width="1.5"/>
-          <text x="80"  y="70" fill="#4dd6a0" font-size="8" text-anchor="middle">0.321</text>
-          <text x="180" y="8"  fill="#f5c518" font-size="8" text-anchor="middle">0.482</text>
-          <text x="270" y="2"  fill="#f87588" font-size="8" text-anchor="middle">0.499</text>
-          <text x="80"  y="115" fill="#7a8fa6" font-size="8" text-anchor="middle">2010</text>
-          <text x="180" y="115" fill="#7a8fa6" font-size="8" text-anchor="middle">2016</text>
-          <text x="270" y="115" fill="#7a8fa6" font-size="8" text-anchor="middle">2022</text>
-          <text x="165" y="128" fill="#7a8fa6" font-size="7" text-anchor="middle" font-family="Noto Sans Bengali">বৈষম্য ক্রমাগত বাড়ছে | উৎস: World Bank</text>
+          <!-- scale: 0.52=10, 0.30=80 → 1unit=0.01=3.18px
+               0.321 → 80-(0.321-0.30)/0.01*3.18 = 80-6.7 = 73
+               0.482 → 80-(0.182)*318 = 80-57.9 = 22
+               0.499 → 80-(0.199)*318 = 80-63.3 = 17
+               0.510 → 80-(0.210)*318 = 80-66.8 = 13 (est 2025) -->
+          <polygon points="55,73 130,22 205,17 255,13 255,80 55,80" fill="url(#giniGrad2)"/>
+          <polyline points="55,73 130,22 205,17 255,13" fill="none" stroke="#f42a41" stroke-width="2.5" stroke-linejoin="round"/>
+          <circle cx="55"  cy="73" r="4" fill="var(--card2)" stroke="#4dd6a0" stroke-width="2"/>
+          <circle cx="130" cy="22" r="4" fill="var(--card2)" stroke="#f5c518" stroke-width="2"/>
+          <circle cx="205" cy="17" r="4" fill="#f42a41" stroke="#fff" stroke-width="1.5"/>
+          <circle cx="255" cy="13" r="4" fill="var(--card2)" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="3 2"/>
+          <text x="55"  y="62" fill="#4dd6a0" font-size="8" text-anchor="middle">0.321</text>
+          <text x="130" y="12" fill="#f5c518" font-size="8" text-anchor="middle">0.482</text>
+          <text x="205" y="7"  fill="#f87588" font-size="8" text-anchor="middle">0.499</text>
+          <text x="255" y="4"  fill="#ff8888" font-size="7.5" text-anchor="middle">~0.51*</text>
+          <text x="55"  y="96" fill="#7a8fa6" font-size="7.5" text-anchor="middle">2010</text>
+          <text x="130" y="96" fill="#7a8fa6" font-size="7.5" text-anchor="middle">2016</text>
+          <text x="205" y="96" fill="#7a8fa6" font-size="7.5" text-anchor="middle">2022</text>
+          <text x="255" y="96" fill="#7a8fa6" font-size="7.5" text-anchor="middle">2025*</text>
+          <text x="155" y="110" fill="#7a8fa6" font-size="6.5" text-anchor="middle">*প্রক্ষেপণ · Source: World Bank, HIES</text>
         </svg>
       </div>
-      <blockquote>
-        Inflation acts as a <strong>regressive tax</strong> — the poor, who spend proportionally more on necessities, suffer disproportionate real income losses.
-        <br><span class="bn" style="font-size:.83rem; color:var(--muted); font-style:normal; display:block; margin-top:.4rem;">মুদ্রাস্ফীতি একটি <strong>রিগ্রেসিভ কর</strong> — দরিদ্রদের আনুপাতিকভাবে বেশি ক্ষতি হয় কারণ তারা আয়ের বড় অংশ নিত্যপণ্যে ব্যয় করে।</span>
+      <blockquote style="margin:0;font-size:.82rem;">
+        Inflation is a <strong>regressive tax</strong> — the poor spend proportionally more on necessities and suffer disproportionate losses.
+        <span class="bn" style="font-size:.76rem;color:var(--muted);font-style:normal;display:block;margin-top:.3rem;">মুদ্রাস্ফীতি একটি <strong>রিগ্রেসিভ কর</strong> — দরিদ্ররা আয়ের বড় অংশ নিত্যপণ্যে ব্যয় করে, তাই সবচেয়ে বেশি ক্ষতিগ্রস্ত।</span>
       </blockquote>
     </div>
   </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════════
-     SLIDE 13 — POLICY RESPONSE
+     SLIDE 13 — POLICY RESPONSE (updated 2026)
 ══════════════════════════════════════════════════════ -->
-<div class="slide">
-  <div class="sec-header">
-    <div class="tag">Policy Response | নীতি প্রতিক্রিয়া</div>
-    <h2>Government &amp; Bangladesh Bank Response <span class="bn-sub" style="display:block;">সরকার ও বাংলাদেশ ব্যাংকের পদক্ষেপ</span></h2>
-  </div>
-  <div class="grid g2" style="max-width:1020px; align-items:start; margin-bottom:.9rem;">
-    <div class="card glow-green">
-      <h3 style="margin-bottom:.8rem; display:flex; align-items:center; gap:.5rem;">🏦 Monetary Policy | মুদ্রানীতি <span style="font-size:.75rem; font-weight:400; color:var(--muted);">(Bangladesh Bank)</span></h3>
-      <ul class="fancy" style="font-size:.87rem;">
-        <li>Policy rate raised to <strong>8.5%</strong> (2024) — most aggressive tightening in decades<br><span class="bn-label">নীতি সুদের হার ৮.৫%-এ উন্নীত — দশকের মধ্যে সবচেয়ে কঠোর সংকোচন।</span></li>
-        <li>9% lending cap removed → <strong>SMART rate system</strong> (2023)<br><span class="bn-label">৯% ঋণ সীমা প্রত্যাহার করে বাজারভিত্তিক SMART হার চালু।</span></li>
-        <li><strong>Crawling peg</strong> exchange rate regime to stabilise BDT<br><span class="bn-label">টাকার স্থিতিশীলতার জন্য ক্রলিং পেগ বিনিময় হার ব্যবস্থা।</span></li>
-        <li>Tightening reserve requirements for commercial banks<br><span class="bn-label">বাণিজ্যিক ব্যাংকের রিজার্ভ প্রয়োজনীয়তা কঠোর করা।</span></li>
-      </ul>
-    </div>
-    <div class="card gold-accent">
-      <h3 style="margin-bottom:.8rem; display:flex; align-items:center; gap:.5rem;">🏛️ Fiscal Policy | রাজস্বনীতি <span style="font-size:.75rem; font-weight:400; color:var(--muted);">(Government)</span></h3>
-      <ul class="fancy gold" style="font-size:.87rem;">
-        <li>Fuel &amp; electricity subsidies gradually withdrawn<br><span class="bn-label">জ্বালানি ও বিদ্যুৎ ভর্তুকি ধীরে ধীরে প্রত্যাহার।</span></li>
-        <li><strong>OMS</strong> — open market sale of rice &amp; essentials at subsidised rates<br><span class="bn-label">ওএমএস-এর মাধ্যমে ভর্তুকি মূল্যে চাল ও নিত্যপণ্য বিক্রয়।</span></li>
-        <li><strong>TCB</strong> — discounted food to 10M+ families<br><span class="bn-label">টিসিবির মাধ্যমে ১ কোটি পরিবারে সাশ্রয়ী মূল্যে খাদ্য বিতরণ।</span></li>
-        <li>Import duty cut on edible oil, sugar, onion<br><span class="bn-label">ভোজ্যতেল, চিনি, পেঁয়াজের আমদানি শুল্ক হ্রাস।</span></li>
-        <li>Social safety net: 130+ programs, ~35M beneficiaries<br><span class="bn-label">১৩০+ সামাজিক নিরাপত্তা কর্মসূচি — ৩.৫ কোটি সুবিধাভোগী।</span></li>
-      </ul>
-    </div>
-  </div>
-  <div class="card red-accent" style="max-width:1020px; width:100%;">
-    <h3 style="color:var(--red);">⚠️ Challenges in Policy Effectiveness | নীতি কার্যকারিতায় চ্যালেঞ্জ</h3>
-    <p style="font-size:.88rem;">Monetary tightening slows growth | সংকোচনমূলক নীতি প্রবৃদ্ধি মন্থর করে &nbsp;•&nbsp; Subsidy withdrawal hurts the poor before inflation falls | ভর্তুকি প্রত্যাহারে দরিদ্ররা আগে ক্ষতিগ্রস্ত &nbsp;•&nbsp; Syndicated markets resist correction | সিন্ডিকেট বাজার সংশোধনে বাধা দেয়।</p>
-  </div>
-</div>
+<div class="slide" style="padding:28px 52px 36px; justify-content:flex-start;">
 
-<!-- ══════════════════════════════════════════════════════
-     SLIDE 14 — RECOMMENDATIONS
-══════════════════════════════════════════════════════ -->
-<div class="slide">
-  <div class="sec-header">
-    <div class="tag">Recommendations | সুপারিশ</div>
-    <h2>Policy Recommendations <span class="bn-sub" style="display:block;">নীতি সুপারিশমালা</span></h2>
-  </div>
-  <div class="grid g2" style="max-width:1020px; align-items:start;">
-    <div class="card">
-      <h3 style="color:var(--accent); margin-bottom:.8rem;">⚡ Short-Term | স্বল্পমেয়াদী</h3>
-      <ul class="fancy blue" style="font-size:.88rem;">
-        <li>Enforce anti-syndicate measures in essential commodity markets<br><span class="bn-label">নিত্যপণ্য বাজারে সিন্ডিকেটবিরোধী পদক্ষেপ কার্যকর করা।</span></li>
-        <li>Strengthen market monitoring &amp; price transparency<br><span class="bn-label">বাজার পর্যবেক্ষণ ও মূল্য স্বচ্ছতা নিশ্চিত করা।</span></li>
-        <li>Targeted cash transfers to poorest households<br><span class="bn-label">সবচেয়ে গরিব পরিবারে লক্ষ্যভিত্তিক নগদ সহায়তা।</span></li>
-        <li>Faster FX reserve rebuilding to stabilise BDT<br><span class="bn-label">টাকার স্থিতিশীলতার জন্য দ্রুত বৈদেশিক মুদ্রার রিজার্ভ পুনর্নির্মাণ।</span></li>
-      </ul>
+  <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.85rem;width:100%;max-width:1100px;">
+    <div class="tag" style="margin-bottom:0;">Policy Response | নীতি প্রতিক্রিয়া</div>
+    <div>
+      <h2 style="font-size:1.55rem;margin-bottom:0;">Government &amp; Bangladesh Bank Response</h2>
+      <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.85rem;color:var(--muted);">সরকার ও বাংলাদেশ ব্যাংকের পদক্ষেপ — 2022 থেকে 2026</p>
     </div>
-    <div class="card gold-accent">
-      <h3 style="margin-bottom:.8rem;">🌱 Medium to Long-Term | মধ্য ও দীর্ঘমেয়াদী</h3>
-      <ul class="fancy gold" style="font-size:.88rem;">
-        <li>Diversify energy mix — expand solar/renewables<br><span class="bn-label">নবায়নযোগ্য জ্বালানিতে বিনিয়োগ বাড়িয়ে আমদানি নির্ভরতা কমানো।</span></li>
-        <li>Invest in cold chain &amp; storage infrastructure<br><span class="bn-label">কৃষি পণ্যের ২৫–৩০% অপচয় কমাতে কোল্ড চেইন অবকাঠামো।</span></li>
-        <li>Formalise &amp; shorten agricultural value chains<br><span class="bn-label">মধ্যস্বত্বভোগীর সংখ্যা কমিয়ে কৃষি মূল্য শৃঙ্খল সংক্ষিপ্ত করা।</span></li>
-        <li>Build independent central bank with inflation targeting<br><span class="bn-label">স্বাধীন কেন্দ্রীয় ব্যাংক ও আনুষ্ঠানিক মুদ্রাস্ফীতি লক্ষ্যমাত্রা কাঠামো গড়ে তোলা।</span></li>
-        <li>Develop domestic capital markets<br><span class="bn-label">ব্যাংক ঋণের উপর নির্ভরতা কমাতে দেশীয় পুঁজি বাজার উন্নয়ন।</span></li>
-      </ul>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;width:100%;max-width:1100px;margin-bottom:.8rem;">
+    <div class="card" style="padding:.9rem 1.1rem;">
+      <h3 style="font-size:.95rem;margin-bottom:.7rem;display:flex;align-items:center;gap:.5rem;">🏦 Monetary Policy <span style="font-size:.78rem;font-weight:400;color:var(--muted);">Bangladesh Bank</span></h3>
+      <div style="display:flex;flex-direction:column;gap:.45rem;">
+        <div style="padding:.4rem .7rem;background:rgba(0,200,120,.07);border-radius:7px;border-left:3px solid #4dd6a0;"><p style="font-size:.85rem;color:var(--text);">✅ Policy rate <strong style="color:#4dd6a0;">8.5%</strong> (2024) — দশকের সবচেয়ে কঠোর সংকোচন</p></div>
+        <div style="padding:.4rem .7rem;background:rgba(0,200,120,.07);border-radius:7px;border-left:3px solid #4dd6a0;"><p style="font-size:.85rem;color:var(--text);">✅ ৯% ঋণ সীমা তুলে <strong style="color:#4dd6a0;">SMART rate</strong> চালু (Jul 2023)</p></div>
+        <div style="padding:.4rem .7rem;background:rgba(0,200,120,.07);border-radius:7px;border-left:3px solid #4dd6a0;"><p style="font-size:.85rem;color:var(--text);">✅ <strong style="color:#4dd6a0;">Crawling peg</strong> বিনিময় হার ব্যবস্থা (May 2024)</p></div>
+        <div style="padding:.4rem .7rem;background:rgba(0,200,120,.07);border-radius:7px;border-left:3px solid #4dd6a0;"><p style="font-size:.85rem;color:var(--text);">✅ IMF-এর সাথে <strong style="color:#4dd6a0;">$4.7B</strong> ECF/EFF চুক্তি (2023–26)</p></div>
+        <div style="padding:.4rem .7rem;background:rgba(0,200,120,.07);border-radius:7px;border-left:3px solid #4dd6a0;"><p style="font-size:.85rem;color:var(--text);">✅ বাণিজ্যিক ব্যাংকের CRR ও SLR কঠোর করা</p></div>
+      </div>
+    </div>
+    <div class="card gold-accent" style="padding:.9rem 1.1rem;">
+      <h3 style="font-size:.95rem;margin-bottom:.7rem;display:flex;align-items:center;gap:.5rem;">🏛️ Fiscal Policy <span style="font-size:.78rem;font-weight:400;color:var(--muted);">Government</span></h3>
+      <div style="display:flex;flex-direction:column;gap:.45rem;">
+        <div style="padding:.4rem .7rem;background:rgba(245,197,24,.08);border-radius:7px;border-left:3px solid var(--gold);"><p style="font-size:.85rem;color:var(--text);">✅ <strong style="color:var(--gold);">OMS</strong> — ভর্তুকি মূল্যে চাল বিক্রয় (৩০ টাকা/kg)</p></div>
+        <div style="padding:.4rem .7rem;background:rgba(245,197,24,.08);border-radius:7px;border-left:3px solid var(--gold);"><p style="font-size:.85rem;color:var(--text);">✅ <strong style="color:var(--gold);">TCB</strong> — ১ কোটি+ পরিবারে সাশ্রয়ী খাদ্য সরবরাহ</p></div>
+        <div style="padding:.4rem .7rem;background:rgba(245,197,24,.08);border-radius:7px;border-left:3px solid var(--gold);"><p style="font-size:.85rem;color:var(--text);">✅ ভোজ্যতেল, চিনি, পেঁয়াজে আমদানি শুল্ক হ্রাস</p></div>
+        <div style="padding:.4rem .7rem;background:rgba(245,197,24,.08);border-radius:7px;border-left:3px solid var(--gold);"><p style="font-size:.85rem;color:var(--text);">✅ ১৩০+ সামাজিক নিরাপত্তা কর্মসূচি — <strong style="color:var(--gold);">৩.৫ কোটি</strong> সুবিধাভোগী</p></div>
+        <div style="padding:.4rem .7rem;background:rgba(245,197,24,.08);border-radius:7px;border-left:3px solid var(--gold);"><p style="font-size:.85rem;color:var(--text);">✅ জ্বালানি ও বিদ্যুৎ ভর্তুকি পর্যায়ক্রমে প্রত্যাহার (২০২২–২৫)</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card red-accent" style="width:100%;max-width:1100px;padding:.75rem 1.1rem;">
+    <p style="font-size:.88rem;font-weight:700;color:var(--red);margin-bottom:.4rem;">⚠️ নীতি কার্যকারিতায় চ্যালেঞ্জ | Challenges</p>
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+      <span style="font-size:.82rem;color:var(--muted);">• সংকোচনমূলক নীতি GDP প্রবৃদ্ধি মন্থর করে (~5.5%, FY25)</span>
+      <span style="font-size:.82rem;color:var(--muted);">• ভর্তুকি প্রত্যাহারে দরিদ্ররা আগে ক্ষতিগ্রস্ত</span>
+      <span style="font-size:.82rem;color:var(--muted);">• সিন্ডিকেট বাজার সংশোধনে বাধা দেয়</span>
+      <span style="font-size:.82rem;color:var(--muted);">• বৈশ্বিক অনিশ্চয়তা (মধ্যপ্রাচ্য, হরমুজ, তৃতীয় বিশ্বযুদ্ধ ঝুঁকি) নিয়ন্ত্রণের বাইরে</span>
     </div>
   </div>
 </div>
 
 <!-- ══════════════════════════════════════════════════════
-     SLIDE 15 — CONCLUSION
+     SLIDE 14 — RECOMMENDATIONS (updated 2026)
 ══════════════════════════════════════════════════════ -->
-<div class="slide">
-  <div class="sec-header">
-    <div class="tag">Conclusion | উপসংহার</div>
-    <h2>Key Takeaways <span class="bn-sub" style="display:block;">মূল বিষয়সমূহ</span></h2>
+<div class="slide" style="padding:28px 52px 36px; justify-content:flex-start;">
+
+  <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.85rem;width:100%;max-width:1100px;">
+    <div class="tag" style="margin-bottom:0;">Recommendations | সুপারিশ</div>
+    <div>
+      <h2 style="font-size:1.55rem;margin-bottom:0;">Policy Recommendations</h2>
+      <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.85rem;color:var(--muted);">নীতি সুপারিশমালা — স্বল্প, মধ্য ও দীর্ঘমেয়াদী পদক্ষেপ</p>
+    </div>
   </div>
-  <div style="max-width:940px; width:100%;">
-    <table>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:.9rem;width:100%;max-width:1100px;">
+
+    <!-- short term -->
+    <div class="card blue-accent" style="padding:.9rem 1.1rem;">
+      <h3 style="color:var(--accent);font-size:.95rem;margin-bottom:.65rem;">⚡ স্বল্পমেয়াদী | Short-Term (2025–26)</h3>
+      <div style="display:flex;flex-direction:column;gap:.45rem;">
+        <div style="padding:.4rem .65rem;background:rgba(77,166,255,.07);border-radius:6px;border-left:2px solid var(--accent);">
+          <p style="font-size:.83rem;color:var(--text);">🛒 বাজার সিন্ডিকেটবিরোধী আইন কঠোর প্রয়োগ</p>
+        </div>
+        <div style="padding:.4rem .65rem;background:rgba(77,166,255,.07);border-radius:6px;border-left:2px solid var(--accent);">
+          <p style="font-size:.83rem;color:var(--text);">💰 সবচেয়ে গরিব পরিবারে লক্ষ্যভিত্তিক নগদ সহায়তা</p>
+        </div>
+        <div style="padding:.4rem .65rem;background:rgba(77,166,255,.07);border-radius:6px;border-left:2px solid var(--accent);">
+          <p style="font-size:.83rem;color:var(--text);">📱 ডিজিটাল মূল্য পর্যবেক্ষণ ও স্বচ্ছতা নিশ্চিত</p>
+        </div>
+        <div style="padding:.4rem .65rem;background:rgba(77,166,255,.07);border-radius:6px;border-left:2px solid var(--accent);">
+          <p style="font-size:.83rem;color:var(--text);">💵 FX রিজার্ভ পুনর্গঠন → টাকার স্থিতিশীলতা</p>
+        </div>
+        <div style="padding:.4rem .65rem;background:rgba(77,166,255,.07);border-radius:6px;border-left:2px solid var(--accent);">
+          <p style="font-size:.83rem;color:var(--text);">📚 কাগজ ও শিক্ষা উপকরণে শুল্ক হ্রাস</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- medium term -->
+    <div class="card gold-accent" style="padding:.9rem 1.1rem;">
+      <h3 style="color:var(--gold);font-size:.95rem;margin-bottom:.65rem;">🌱 মধ্যমেয়াদী | Medium-Term (2026–28)</h3>
+      <div style="display:flex;flex-direction:column;gap:.45rem;">
+        <div style="padding:.4rem .65rem;background:rgba(245,197,24,.07);border-radius:6px;border-left:2px solid var(--gold);">
+          <p style="font-size:.83rem;color:var(--text);">❄️ কোল্ড চেইন অবকাঠামো — ২৫–৩০% কৃষি অপচয় রোধ</p>
+        </div>
+        <div style="padding:.4rem .65rem;background:rgba(245,197,24,.07);border-radius:6px;border-left:2px solid var(--gold);">
+          <p style="font-size:.83rem;color:var(--text);">🔗 সাপ্লাই চেইন সংক্ষিপ্ত → মধ্যস্বত্বভোগী কমানো</p>
+        </div>
+        <div style="padding:.4rem .65rem;background:rgba(245,197,24,.07);border-radius:6px;border-left:2px solid var(--gold);">
+          <p style="font-size:.83rem;color:var(--text);">☀️ নবায়নযোগ্য জ্বালানি (Solar) — আমদানি নির্ভরতা কমানো</p>
+        </div>
+        <div style="padding:.4rem .65rem;background:rgba(245,197,24,.07);border-radius:6px;border-left:2px solid var(--gold);">
+          <p style="font-size:.83rem;color:var(--text);">🌾 কৃষিখাতে ভর্তুকি সার ও বীজ — উৎপাদন বৃদ্ধি</p>
+        </div>
+        <div style="padding:.4rem .65rem;background:rgba(245,197,24,.07);border-radius:6px;border-left:2px solid var(--gold);">
+          <p style="font-size:.83rem;color:var(--text);">🏭 LDC graduation পরবর্তী রপ্তানি বৈচিত্র্য</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- long term -->
+    <div class="card" style="padding:.9rem 1.1rem;">
+      <h3 style="color:#4dd6a0;font-size:.95rem;margin-bottom:.65rem;">🏛️ দীর্ঘমেয়াদী | Long-Term (2028+)</h3>
+      <div style="display:flex;flex-direction:column;gap:.45rem;">
+        <div style="padding:.4rem .65rem;background:rgba(0,200,120,.07);border-radius:6px;border-left:2px solid #4dd6a0;">
+          <p style="font-size:.83rem;color:var(--text);">🏦 স্বাধীন কেন্দ্রীয় ব্যাংক ও আনুষ্ঠানিক মুদ্রাস্ফীতি লক্ষ্যমাত্রা</p>
+        </div>
+        <div style="padding:.4rem .65rem;background:rgba(0,200,120,.07);border-radius:6px;border-left:2px solid #4dd6a0;">
+          <p style="font-size:.83rem;color:var(--text);">📈 দেশীয় পুঁজিবাজার উন্নয়ন — ব্যাংক নির্ভরতা কমানো</p>
+        </div>
+        <div style="padding:.4rem .65rem;background:rgba(0,200,120,.07);border-radius:6px;border-left:2px solid #4dd6a0;">
+          <p style="font-size:.83rem;color:var(--text);">🔬 প্রযুক্তিভিত্তিক কৃষি — উৎপাদনশীলতা বৃদ্ধি</p>
+        </div>
+        <div style="padding:.4rem .65rem;background:rgba(0,200,120,.07);border-radius:6px;border-left:2px solid #4dd6a0;">
+          <p style="font-size:.83rem;color:var(--text);">🌐 আঞ্চলিক বাণিজ্য চুক্তি — আমদানি বৈচিত্র্য</p>
+        </div>
+        <div style="padding:.4rem .65rem;background:rgba(0,200,120,.07);border-radius:6px;border-left:2px solid #4dd6a0;">
+          <p style="font-size:.83rem;color:var(--text);">⚡ জ্বালানি নিরাপত্তা নিশ্চিত — হরমুজ নির্ভরতা কমানো</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════
+     SLIDE 15 — CONCLUSION (updated 2026)
+══════════════════════════════════════════════════════ -->
+<div class="slide" style="padding:28px 52px 36px; justify-content:flex-start;">
+
+  <div style="display:flex;align-items:center;gap:.8rem;margin-bottom:.85rem;width:100%;max-width:1100px;">
+    <div class="tag" style="margin-bottom:0;">Conclusion | উপসংহার</div>
+    <div>
+      <h2 style="font-size:1.55rem;margin-bottom:0;">Key Takeaways</h2>
+      <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.85rem;color:var(--muted);">মূল বিষয়সমূহ — Bangladesh Inflation 2019–2026</p>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:1.1rem;width:100%;max-width:1100px;align-items:start;">
+
+    <table style="font-size:.88rem;">
       <thead>
         <tr>
-          <th>Dimension | মাত্রা</th>
-          <th>Finding | প্রাপ্তি</th>
+          <th style="font-size:.8rem;">Dimension | মাত্রা</th>
+          <th style="font-size:.8rem;">Finding | প্রাপ্তি (2024–26)</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><strong>Current State | বর্তমান অবস্থা</strong></td>
-          <td>~9.5% CPI (FY24) — above 6% target, driven by multi-year structural &amp; exogenous shocks<br><span class="bn-label">লক্ষ্যমাত্রার ওপরে, বহু বছরের কাঠামোগত ও বাহ্যিক আঘাতের ফলে।</span></td>
+          <td><strong>Current State</strong></td>
+          <td>CPI ~৯.৭% (FY24–25) — ৬% লক্ষ্যমাত্রার অনেক উপরে<span class="bn-label" style="font-size:.78rem;">বহু বছরের কাঠামোগত ও বৈশ্বিক আঘাতের ফলে</span></td>
         </tr>
         <tr>
-          <td><strong>Primary Cause | প্রধান কারণ</strong></td>
-          <td>Cost-push (energy &amp; import prices) + weak taka + market syndication<br><span class="bn-label">ব্যয়-চালিত কারণ + দুর্বল টাকা + বাজার সিন্ডিকেট।</span></td>
+          <td><strong>Primary Causes</strong></td>
+          <td>তেল সংকট + হরমুজ প্রণালী + বিদ্যুৎ সংকট + দুর্বল টাকা + বাজার সিন্ডিকেট<span class="bn-label" style="font-size:.78rem;">ব্যয়-চালিত ও মুদ্রানৈতিক উভয় কারণ বিদ্যমান</span></td>
         </tr>
         <tr>
-          <td><strong>Hardest Hit | সবচেয়ে ক্ষতিগ্রস্ত</strong></td>
-          <td>Low-income urban households — spending 70%+ of income on food<br><span class="bn-label">নিম্নআয়ের শহরাঞ্চলের পরিবার — আয়ের ৭০%+ খাদ্যে ব্যয়।</span></td>
+          <td><strong>Hardest Hit</strong></td>
+          <td>নিম্নআয়ের পরিবার — আয়ের ৭৫% খাদ্যে ব্যয় (২০২৫)<span class="bn-label" style="font-size:.78rem;">কাগজ, ওষুধ, বাসা ভাড়া সব বাড়ছে</span></td>
         </tr>
         <tr>
-          <td><strong>Policy Status | নীতির অবস্থা</strong></td>
-          <td>BB tightening underway; structural supply-side reforms still lagging<br><span class="bn-label">বাংলাদেশ ব্যাংকের সংকোচন চলছে; কাঠামোগত সংস্কার এখনো পিছিয়ে।</span></td>
+          <td><strong>Policy Status</strong></td>
+          <td>BB rate ৮.৫%, IMF $4.7B deal, SMART rate চালু<span class="bn-label" style="font-size:.78rem;">কাঠামোগত সংস্কার এখনো পিছিয়ে</span></td>
         </tr>
         <tr>
-          <td><strong>Outlook | ভবিষ্যৎ</strong></td>
-          <td>Gradual moderation expected as global commodity prices ease &amp; tightening takes effect<br><span class="bn-label">বৈশ্বিক পণ্যের দাম কমলে ও সংকোচনমূলক নীতি কার্যকর হলে ধীরে কমার প্রত্যাশা।</span></td>
+          <td><strong>2026 Outlook</strong></td>
+          <td>IMF/World Bank প্রজেকশন — CPI ৭–৮%-এ নামার আশা<span class="bn-label" style="font-size:.78rem;">বৈশ্বিক ঝুঁকি (মধ্যপ্রাচ্য, তেল) downside risk</span></td>
         </tr>
       </tbody>
     </table>
-    <div style="margin-top:1.2rem; text-align:center; background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1rem 1.4rem;">
-      <p style="font-size:.93rem;">Controlling inflation requires <strong>coordinated monetary, fiscal &amp; structural policies</strong> — no single lever is sufficient.</p>
-      <p class="bn-label" style="font-size:.9rem; margin-top:.4rem; color:var(--muted);">মুদ্রাস্ফীতি নিয়ন্ত্রণে <strong>সমন্বিত মুদ্রা, রাজস্ব ও কাঠামোগত নীতি</strong> প্রয়োজন — একটি হাতিয়ার যথেষ্ট নয়।</p>
+
+    <div style="display:flex;flex-direction:column;gap:.75rem;">
+      <div style="background:linear-gradient(135deg,rgba(0,106,78,.15),rgba(0,180,100,.08));border:1px solid rgba(0,200,120,.25);border-radius:14px;padding:1rem 1.2rem;">
+        <p style="font-size:.92rem;font-weight:700;color:#4dd6a0;margin-bottom:.45rem;">🎯 Core Lesson | মূল শিক্ষা</p>
+        <p style="font-size:.87rem;line-height:1.7;color:var(--text);">Controlling inflation requires <strong>coordinated monetary, fiscal &amp; structural policies</strong> — no single lever is sufficient.</p>
+        <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.82rem;color:var(--muted);margin-top:.45rem;line-height:1.7;">মুদ্রাস্ফীতি নিয়ন্ত্রণে <strong style="color:#4dd6a0;">সমন্বিত মুদ্রা, রাজস্ব ও কাঠামোগত নীতি</strong> প্রয়োজন — একটি হাতিয়ার যথেষ্ট নয়।</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:.6rem;">
+        <div class="card red-accent" style="padding:.7rem .9rem;text-align:center;">
+          <p style="font-size:1.5rem;font-weight:900;color:var(--red);line-height:1;">9.73%</p>
+          <p style="font-size:.72rem;color:var(--muted);margin-top:.2rem;">Peak CPI FY23-24</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.7rem;color:var(--muted);">সর্বোচ্চ মুদ্রাস্ফীতি</p>
+        </div>
+        <div class="card" style="padding:.7rem .9rem;text-align:center;">
+          <p style="font-size:1.5rem;font-weight:900;color:#4dd6a0;line-height:1;">~7%</p>
+          <p style="font-size:.72rem;color:var(--muted);margin-top:.2rem;">IMF Target FY26</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.7rem;color:var(--muted);">২০২৬ লক্ষ্যমাত্রা</p>
+        </div>
+        <div class="card gold-accent" style="padding:.7rem .9rem;text-align:center;">
+          <p style="font-size:1.5rem;font-weight:900;color:var(--gold);line-height:1;">$4.7B</p>
+          <p style="font-size:.72rem;color:var(--muted);margin-top:.2rem;">IMF Support Package</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.7rem;color:var(--muted);">IMF সহায়তা প্যাকেজ</p>
+        </div>
+        <div class="card blue-accent" style="padding:.7rem .9rem;text-align:center;">
+          <p style="font-size:1.5rem;font-weight:900;color:var(--accent);line-height:1;">0.499</p>
+          <p style="font-size:.72rem;color:var(--muted);margin-top:.2rem;">Gini Coefficient 2022</p>
+          <p style="font-family:'Noto Sans Bengali',sans-serif;font-size:.7rem;color:var(--muted);">বৈষম্য সূচক</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
