@@ -357,6 +357,51 @@
       .stat-num { font-size: 1.4rem !important; }
     }
 
+    /* ══════════════════════════════════════
+       SLIDE-SPECIFIC MOBILE FIXES
+    ══════════════════════════════════════ */
+    @media (max-width: 600px) {
+      /* Slide 1 — title slide: center vertically */
+      .slide-title {
+        justify-content: center !important;
+        align-items: center !important;
+      }
+      .slide-title > div[style] {
+        align-items: center !important;
+        text-align: center !important;
+        padding: 0 !important;
+      }
+
+      /* Slide 1 presenter card — full width */
+      .slide-title [style*="inline-flex"] {
+        width: 100% !important;
+        justify-content: center !important;
+      }
+
+      /* Slides with compact padding override — keep scrollable */
+      .slide[style*="justify-content:flex-start"] {
+        justify-content: flex-start !important;
+      }
+
+      /* Slide 2 TOC — 2 col on mobile */
+      .slide-toc [style*="grid-template-columns:repeat(4"] {
+        grid-template-columns: 1fr 1fr !important;
+        gap: .5rem !important;
+      }
+
+      /* All inline flex rows that are wide → wrap */
+      .slide [style*="display:flex"][style*="gap"] {
+        flex-wrap: wrap !important;
+      }
+
+      /* stat tiles row → 2 col grid */
+      .mob-2col {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: .5rem !important;
+      }
+    }
+
     /* ── Pill badge ── */
     .pill {
       display: inline-block; padding: .18rem .6rem;
@@ -457,7 +502,7 @@
 <!-- ══════════════════════════════════════════════════════
      SLIDE 1 — TITLE (full redesign with presenter info)
 ══════════════════════════════════════════════════════ -->
-<div class="slide active" style="padding:48px 64px;">
+<div class="slide slide-title active" style="padding:48px 64px;">
 
   <!-- background image + dark overlay -->
   <div style="position:absolute;inset:0;pointer-events:none;z-index:0;">
@@ -466,7 +511,7 @@
   </div>
 
   <!-- centered content -->
-  <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;max-width:860px;gap:1rem;">
+  <div style="position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;max-width:860px;gap:1rem;margin:auto;">
 
     <!-- tag -->
     <span style="display:inline-block;background:rgba(244,42,65,.15);border:1px solid rgba(244,42,65,.38);border-radius:20px;font-size:.67rem;font-weight:700;letter-spacing:.11em;text-transform:uppercase;color:#f87588;padding:.26rem .88rem;">Economics Presentation · অর্থনীতি উপস্থাপনা</span>
@@ -2264,6 +2309,20 @@
   function applyMobile() {
     const isMob = window.innerWidth <= 600;
 
+    // Slide 1 title: always center, not scroll
+    const titleSlide = document.querySelector('.slide-title');
+    if (titleSlide) {
+      if (isMob) {
+        titleSlide.style.setProperty('justify-content', 'center', 'important');
+        titleSlide.style.setProperty('align-items', 'center', 'important');
+        titleSlide.style.setProperty('overflow-y', 'hidden', 'important');
+      } else {
+        titleSlide.style.removeProperty('justify-content');
+        titleSlide.style.removeProperty('align-items');
+        titleSlide.style.removeProperty('overflow-y');
+      }
+    }
+
     // 1. All inline-style grid containers inside slides → stack
     document.querySelectorAll('.slide [style]').forEach(el => {
       const s = el.getAttribute('style') || '';
@@ -2317,14 +2376,7 @@
         }
       });
 
-      // 4. Inline padding — reduce on mobile
-      document.querySelectorAll('.slide [style*="padding"]').forEach(el => {
-        // only touch elements with large padding values
-        const s = el.getAttribute('style') || '';
-        if (s.includes('padding:') || s.includes('padding ')) {
-          el.style.setProperty('padding', '.5rem .7rem', 'important');
-        }
-      });
+      // 4. Inline padding — skip (let CSS handle it)
     }
   }
 
